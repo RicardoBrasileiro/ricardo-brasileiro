@@ -93,10 +93,20 @@ export default {
     slide: function (section, side) {
       let cards = document.getElementsByClassName("project-cards")[section];
 
-      if (side == "right") {
-        cards.scrollLeft += 382;
-      } else if (side == "left") {
-        cards.scrollLeft -= 382;
+      let windowWidth = window.innerWidth;
+
+      if (windowWidth > 700) {
+        if (side == "right") {
+          cards.scrollLeft += 382;
+        } else if (side == "left") {
+          cards.scrollLeft -= 382;
+        }
+      } else {
+        if (side == "right") {
+          cards.scrollLeft += 282;
+        } else if (side == "left") {
+          cards.scrollLeft -= 282;
+        }
       }
     },
   },
