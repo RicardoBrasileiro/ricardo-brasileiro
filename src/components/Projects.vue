@@ -105,12 +105,23 @@ export default {
 
 <style scoped>
 .project-card {
-  width: 300px;
+  width: 350px;
   height: 200px;
   justify-content: space-between;
 }
 
 .project-cards {
-  width: calc(300px + 2rem);
+  width: calc(350px + 2rem);
+}
+
+@media only screen and (max-width: 700px) {
+  .project-card {
+    width: 250px;
+    height: 300px;
+  }
+
+  .project-cards {
+    width: calc(250px + 2rem);
+  }
 }
 </style>
