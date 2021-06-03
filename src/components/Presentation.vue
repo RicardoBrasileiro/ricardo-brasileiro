@@ -22,12 +22,20 @@
         no Twitter, basta clicar:
       </p>
       <div class="social-medias">
-        <i class="fab fa-github"></i>
-        <i class="fab fa-linkedin"></i>
-        <i class="fab fa-twitter"></i>
+        <a href="https://github.com/RicardoBrasileiro"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/jos%C3%A9-ricardo-031b99209"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://twitter.com/ricarbrg"
+          ><i class="fab fa-twitter"></i
+        ></a>
       </div>
     </div>
-    <a class="contact" href="/">Quer entrar em contato comigo? Clique aqui</a>
+    <a class="contact" href="mailto:jricardobgoncalves@gmail.com"
+      >Quer entrar em contato comigo? Clique aqui</a
+    >
   </div>
 </template>
 

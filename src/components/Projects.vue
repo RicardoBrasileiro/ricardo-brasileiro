@@ -1,32 +1,29 @@
 <template>
-  <div class="projects">
+  <div class="sections">
     <div v-for="project in projects" :key="project.sectionName">
-      <div class="project-section">
-        <p class="project-label">{{ project.sectionName }}</p>
+      <div class="section">
+        <p class="section-name">{{ project.sectionName }}</p>
       </div>
-      <div class="projects-box">
-        <button class="slide-cards" v-on:click="slide(project.section, 'left')">
+      <div class="section-cards-box">
+        <button class="btn-slide" v-on:click="slide(project.section, 'left')">
           <i class="fas fa-arrow-left"></i>
         </button>
-        <div class="project-cards">
+        <div class="section-cards project-cards">
           <div>
             <div v-for="repo in project.repos" :key="repo.name">
-              <div class="project-card">
-                <div class="project-info">
-                  <p class="project-title">{{ repo.name }}</p>
+              <div class="section-card project-card">
+                <div class="section-card-info">
+                  <p class="section-card-title">{{ repo.name }}</p>
                   <p>{{ repo.description }}</p>
                 </div>
-                <a class="project-link" :href="repo.clone_url"
+                <a class="section-card-link" :href="repo.clone_url"
                   >Acessar o repositório</a
                 >
               </div>
             </div>
           </div>
         </div>
-        <button
-          class="slide-cards"
-          v-on:click="slide(project.section, 'right')"
-        >
+        <button class="btn-slide" v-on:click="slide(project.section, 'right')">
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
@@ -97,9 +94,9 @@ export default {
       let cards = document.getElementsByClassName("project-cards")[section];
 
       if (side == "right") {
-        cards.scrollLeft += 432;
+        cards.scrollLeft += 382;
       } else if (side == "left") {
-        cards.scrollLeft -= 432;
+        cards.scrollLeft -= 382;
       }
     },
   },
@@ -107,93 +104,13 @@ export default {
 </script>
 
 <style scoped>
-.projects {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .project-card {
-  width: 400px;
+  width: 350px;
   height: 200px;
-  padding: 1rem;
-  margin: 1rem;
-  color: #ffffff;
-  background: #7400b8;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 6px 0px #60178b;
-}
-
-.project-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.project-link {
-  padding: 0.75rem;
-  color: #7400b8;
-  background: #ffffff;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.project-section {
-  position: relative;
-  width: 100%;
-  margin-bottom: 1rem;
-  z-index: 1;
-}
-
-.project-label {
-  color: #7400b8;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.projects-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.slide-cards {
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  color: #7400b8;
-  background: #ffffff;
-  border-radius: 50%;
-  border: none;
-  box-shadow: 0px 0px 2px gray;
-  transition: all 0.2s linear;
-}
-
-.slide-cards:hover {
-  box-shadow: 0px 0px 4px gray;
-}
-
-.slide-cards[disabled] {
-  background: red;
 }
 
 .project-cards {
-  width: calc(400px + 2rem);
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
-
-.project-cards > div {
-  width: max-content;
-  display: flex;
-}
-
-@media only screen and (max-width: 700px) {
-  .projects {
-    justify-content: center;
-  }
+  width: calc(350px + 2rem);
 }
 </style>
