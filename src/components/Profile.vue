@@ -32,8 +32,7 @@ export default {
 .profile {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 65vh;
+  justify-content: space-around;
 }
 
 .profile-img {
@@ -53,17 +52,21 @@ export default {
 }
 
 .profile-info {
-  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
 .profile-info > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 3rem;
 }
 
 .profile-info div div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0.5rem 0;
 }
 
@@ -77,8 +80,7 @@ export default {
 }
 
 .profile-info div div p {
-  margin-left: 1rem;
-  color: #7400b8;
+  color: var(--primary-color);
   font-size: 1rem;
 }
 
@@ -86,12 +88,23 @@ export default {
   .profile {
     width: 100%;
     align-items: center;
+    margin: 2rem 0;
   }
 
   .profile-info {
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
+  }
+
+  .profile-info div div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-info div div p {
+    margin: 0;
   }
 }
 </style>

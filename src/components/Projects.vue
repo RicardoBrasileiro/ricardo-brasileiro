@@ -1,32 +1,36 @@
 <template>
-  <div class="sections">
-    <div v-for="project in projects" :key="project.sectionName">
-      <div class="section">
-        <p class="section-name">{{ project.sectionName }}</p>
-      </div>
-      <div class="section-cards-box">
-        <button class="btn-slide" v-on:click="slide(project.section, 'left')">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <div class="section-cards project-cards">
-          <div>
-            <div v-for="repo in project.repos" :key="repo.name">
-              <div class="section-card project-card">
-                <div class="section-card-info">
-                  <p class="section-card-title">{{ repo.name }}</p>
-                  <p>{{ repo.description }}</p>
-                </div>
-                <a class="section-card-link" :href="repo.clone_url"
-                  >Acessar o repositório</a
-                >
+  <div class="projects my-section" id="projects">
+    <h2 class="sections-name">Projetos</h2>
+    <div class="section-cards-box">
+      <button class="btn-slide" v-on:click="slide('left')">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <div class="section-cards project-cards">
+        <div>
+          <div v-for="project in projects" :key="project.name" class="cards">
+            <div class="project-card">
+              <div class="section-card-info">
+                <p class="section-card-title">{{ project.name }}</p>
+                <p>{{ project.description }}</p>
               </div>
+              <a class="section-card-link" :href="project.clone_url"
+                >Acessar repositório</a
+              >
             </div>
           </div>
         </div>
-        <button class="btn-slide" v-on:click="slide(project.section, 'right')">
+      </div>
+      <div class="slide-buttons">
+        <button class="btn-slide" v-on:click="slide('left')">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="btn-slide" v-on:click="slide('right')">
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
+      <button class="btn-slide" v-on:click="slide('right')">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </div>
   </div>
 </template>
@@ -38,18 +42,7 @@ export default {
   name: "Projects",
   data() {
     return {
-      projects: [
-        {
-          section: 0,
-          sectionName: "Populares",
-          repos: [],
-        },
-        {
-          section: 1,
-          sectionName: "Recentes",
-          repos: [],
-        },
-      ],
+      projects: [],
     };
   },
   created: function () {
@@ -57,7 +50,6 @@ export default {
       .get("https://api.github.com/users/RicardoBrasileiro/repos")
       .then((response) => {
         let repos = response.data;
-        console.log(repos);
         repos.map((repo) => {
           axios
             .get(
@@ -68,21 +60,8 @@ export default {
             .then((res) => {
               repo.commits = res.data.length;
               if (repo.name != "RicardoBrasileiro") {
-                if (repo.commits > 25) {
-                  this.projects[0].repos.push(repo);
-                } else {
-                  let date = repo.updated_at
-                    .toString()
-                    .split("T")[0]
-                    .split("-");
-                  let month = Number(date[1]);
-                  let year = Number(date[0]);
-                  let now = new Date();
-                  let monthNow = now.getMonth();
-                  let yearNow = now.getFullYear();
-                  if (year == yearNow && monthNow - month <= 1) {
-                    this.projects[1].repos.push(repo);
-                  }
+                if (repo.commits > 15 && !repo.fork) {
+                  this.projects.push(repo);
                 }
               }
             });
@@ -90,8 +69,8 @@ export default {
       });
   },
   methods: {
-    slide: function (section, side) {
-      let cards = document.getElementsByClassName("project-cards")[section];
+    slide: function (side) {
+      let cards = document.getElementsByClassName("project-cards")[0];
 
       let windowWidth = window.innerWidth;
 
@@ -103,9 +82,9 @@ export default {
         }
       } else {
         if (side == "right") {
-          cards.scrollLeft += 282;
+          cards.scrollLeft += 332;
         } else if (side == "left") {
-          cards.scrollLeft -= 282;
+          cards.scrollLeft -= 332;
         }
       }
     },
@@ -114,24 +93,131 @@ export default {
 </script>
 
 <style scoped>
+.section-cards-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-cards {
+  overflow: hidden;
+  scroll-behavior: smooth;
+  margin: 0 1rem;
+}
+
+.section-cards > div {
+  width: max-content;
+  display: flex;
+}
+
+.section-card-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.section-card-link {
+  padding: 0.75rem;
+  color: #ffffff;
+  background: var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .project-card {
   width: 350px;
-  height: 200px;
+  height: 300px;
+  padding: 1rem;
+  margin: 1rem;
+  color: var(--primary-color);
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0px 0px 3px gray;
+  transition: all 0.2s linear;
 }
 
 .project-cards {
-  width: calc(350px + 2rem);
+  width: calc(350px + 12rem);
+}
+
+.btn-slide {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+  transition: all 0.2s linear;
+}
+
+.btn-slide:hover {
+  box-shadow: 0px 0px 5px gray;
+}
+
+.slide-buttons {
+  display: none;
+}
+
+@media only screen and (min-width: 700px) {
+  .cards:first-child {
+    margin-left: 5rem;
+  }
+
+  .cards:last-child {
+    margin-right: 5rem;
+  }
 }
 
 @media only screen and (max-width: 700px) {
+  .projects {
+    justify-content: space-evenly;
+  }
+
   .project-card {
-    width: 250px;
+    width: 300px;
     height: 300px;
+    margin: 1rem;
   }
 
   .project-cards {
-    width: calc(250px + 2rem);
+    width: calc(300px + 2rem);
+  }
+
+  .section-cards-box {
+    width: max-content;
+    flex-direction: column;
+  }
+
+  .section-cards-box > .btn-slide {
+    display: none;
+  }
+
+  .slide-buttons {
+    display: flex;
+    width: 100%;
+    padding: 0 2rem;
+    justify-content: space-between;
+  }
+
+  .slide-buttons .btn-slide {
+    color: #ffffff;
+    background: var(--primary-color);
+    height: 35px;
+    width: 70px;
+    border-radius: 0.5rem;
   }
 }
 </style>

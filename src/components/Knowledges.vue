@@ -1,37 +1,24 @@
 <template>
-  <div class="sections">
-    <div
-      v-for="knowledge_info in knowledges_info"
-      :key="knowledge_info.section"
-    >
-      <div class="section">
-        <p class="section-name">{{ knowledge_info.sectionName }}</p>
-        <div class="section-cards-box">
-          <button
-            class="btn-slide"
-            v-on:click="slide(knowledge_info.section, 'left')"
-          >
-            <i class="fas fa-arrow-left"></i>
-          </button>
-          <div class="section-cards knowledges-cards">
-            <div>
-              <div
-                v-for="knowledge in knowledge_info.knowledges"
-                :key="knowledge.name"
-              >
-                <div class="section-card knowledge-card">
-                  <i :class="'section-card-icon' + ' ' + knowledge.icon"></i>
-                  <p class="section-card-name">{{ knowledge.name }}</p>
-                </div>
-              </div>
+  <div class="knowledges my-section" id="knowledges">
+    <h2 class="sections-name">Conhecimentos</h2>
+    <div class="sections">
+      <div
+        v-for="knowledge_info in knowledges_info"
+        :key="knowledge_info.section"
+      >
+        <div class="section">
+          <p class="section-name">{{ knowledge_info.sectionName }}</p>
+          <div class="knowledges-box">
+            <div
+              v-for="knowledge in knowledge_info.knowledges"
+              :key="knowledge.name"
+            >
+              <i
+                :class="'knowledge' + ' ' + knowledge.icon"
+                :title="knowledge.name"
+              ></i>
             </div>
           </div>
-          <button
-            class="btn-slide"
-            v-on:click="slide(knowledge_info.section, 'right')"
-          >
-            <i class="fas fa-arrow-right"></i>
-          </button>
         </div>
       </div>
     </div>
@@ -48,40 +35,62 @@ export default {
       knowledges_info: data.knowledges_info,
     };
   },
-  methods: {
-    slide: function (section, side) {
-      let cards = document.getElementsByClassName("knowledges-cards")[section];
-
-      if (side == "right") {
-        cards.scrollLeft += 232;
-      } else if (side == "left") {
-        cards.scrollLeft -= 232;
-      }
-    },
-  },
 };
 </script>
 
 <style scoped>
-.knowledges-cards {
-  width: calc(400px + 4rem);
-}
-
-.knowledge-card {
-  width: 200px;
-  height: 250px;
-  position: relative;
-  justify-content: center;
+.knowledges {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
-.knowledge-card:hover {
-  transform: translateY(-0.5rem);
+.sections {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 35vw;
+  margin: 3rem 0;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.section-name {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.knowledges-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.knowledge {
+  width: 100%;
+  font-size: 2.5rem;
+  margin: 0 1rem;
+  color: var(--primary-color);
 }
 
 @media only screen and (max-width: 700px) {
-  .knowledges-cards {
-    width: calc(200px + 2rem);
+  .sections {
+    flex-direction: column;
+  }
+
+  .section {
+    width: 100%;
   }
 }
 </style>

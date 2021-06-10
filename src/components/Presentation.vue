@@ -21,21 +21,19 @@
         ver outros repositórios meus, além de postagens que faço no LinkedIn e
         no Twitter, basta clicar:
       </p>
-      <div class="social-medias">
-        <a href="https://github.com/RicardoBrasileiro"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/jos%C3%A9-ricardo-031b99209"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a href="https://twitter.com/ricarbrg"
-          ><i class="fab fa-twitter"></i
-        ></a>
-      </div>
     </div>
-    <a class="contact" href="mailto:jricardobgoncalves@gmail.com"
-      >Quer entrar em contato comigo? Clique aqui</a
-    >
+    <div class="social-medias">
+      <a href="https://github.com/RicardoBrasileiro"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a href="https://www.linkedin.com/in/jos%C3%A9-ricardo-031b99209"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a href="https://twitter.com/ricarbrg"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/jricardo_brasileiro/"
+        ><i class="fab fa-instagram"></i
+      ></a>
+    </div>
   </div>
 </template>
 
@@ -48,10 +46,13 @@ export default {
 <style scoped>
 .presentation {
   width: 60%;
-  min-height: 65vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.description {
+  margin-bottom: 2rem;
 }
 
 .presentation .description p {
@@ -67,11 +68,10 @@ export default {
 .social-medias {
   display: flex;
   justify-content: space-evenly;
-  margin: 2rem 0;
 }
 
 .social-medias i {
-  color: #7400b8;
+  color: var(--primary-color);
   font-size: 2rem;
 }
 
@@ -81,7 +81,7 @@ export default {
   margin: 1rem 0 0 0;
   padding: 1rem;
   color: #ffffff;
-  background: #7400b8;
+  background: var(--primary-color);
   border-radius: 10px;
   border-top: 0px solid transparent;
   border-bottom: 5px solid rgba(0, 0, 0, 0.25);

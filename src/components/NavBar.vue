@@ -12,15 +12,9 @@
     <input type="checkbox" name="" id="toggle-actions" class="toggle-actions" />
 
     <div class="nav-bar-actions">
-      <div>
-        <router-link to="/knowledges">Conhecimentos</router-link>
-      </div>
-      <div>
-        <router-link to="/">Início</router-link>
-      </div>
-      <div>
-        <router-link to="/projects">Projetos</router-link>
-      </div>
+      <a href="#home">Início</a>
+      <a href="#knowledges">Conhecimentos</a>
+      <a href="#projects">Projetos</a>
     </div>
     <label class="label-toggle-actions" for="toggle-actions">
       <div>
@@ -43,11 +37,12 @@ export default {
   width: 100%;
   position: fixed;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background: #7400b8;
+  background: var(--primary-color);
   z-index: 97;
-  box-shadow: 0px 0px 6px #58008b;
+  box-shadow: 0px 0px 6px var(--secondary-color);
 }
 
 .nav-bar a {
@@ -63,21 +58,16 @@ export default {
   position: absolute;
   width: 25rem;
   display: flex;
+  justify-content: space-between;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.4s linear;
 }
 
-.nav-bar-actions div {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0 0.15rem;
-}
-
 .nav-bar-actions a {
+  text-align: center;
+  margin: 0 0.15rem;
   position: relative;
-  padding-bottom: 0.5rem;
 }
 
 .page-selected::before {
@@ -209,10 +199,10 @@ export default {
     transform: none;
     width: 15rem;
     height: 100vh;
-    background: #7400b8;
+    background: var(--primary-color);
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: 0px 0px 4px #58008b;
+    box-shadow: 0px 0px 4px var(--secondary-color);
     z-index: 96;
   }
 
