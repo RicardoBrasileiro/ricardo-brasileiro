@@ -10,11 +10,11 @@
         mais :)
       </p>
       <p>
-        Agora uma apresentação mais detalhada, meu nome é José Ricardo, tenho 19
-        anos e sou aluno do curso superior em Análise e Desenvolvimento de
-        Sistemas no Instituto Federal da Paraíba. Gosto de trabalhar com
-        tecnologias web sejam front ou back-end, também trabalho com linguagens
-        desktop e Bancos de Dados Relacionais e NoSQL.
+        Agora uma apresentação mais detalhada, meu nome é José Ricardo e sou
+        aluno do curso superior em Análise e Desenvolvimento de Sistemas no
+        Instituto Federal da Paraíba. Gosto de trabalhar com tecnologias web
+        sejam front ou back-end, também trabalho com linguagens desktop e Bancos
+        de Dados Relacionais e NoSQL.
       </p>
       <p>
         Além de ver alguns dos meus projetos mais populares, você também pode
@@ -56,7 +56,7 @@ export default {
 }
 
 .presentation .description p {
-  color: #808080;
+  color: var(--text-color);
   text-align: justify;
   margin: 1rem 0;
 }
@@ -71,26 +71,8 @@ export default {
 }
 
 .social-medias i {
-  color: var(--primary-color);
+  color: var(--theme-color);
   font-size: 2rem;
-}
-
-.contact {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0 0 0;
-  padding: 1rem;
-  color: #ffffff;
-  background: var(--primary-color);
-  border-radius: 10px;
-  border-top: 0px solid transparent;
-  border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-  transition: all 0.1s linear;
-}
-
-.contact:hover {
-  border-bottom-width: 0;
-  border-top-width: 5px;
 }
 
 @media only screen and (max-width: 700px) {

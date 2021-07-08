@@ -41,9 +41,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
+  background: var(--text-color);
   border-radius: 50%;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
 }
 
 .profile-img img {
@@ -75,12 +74,12 @@ export default {
 }
 
 .profile-info div > p {
-  color: #acacac;
+  color: var(--text-color);
   font-size: 0.9rem;
 }
 
 .profile-info div div p {
-  color: var(--primary-color);
+  color: var(--theme-color);
   font-size: 1rem;
 }
 

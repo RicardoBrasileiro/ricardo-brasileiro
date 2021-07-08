@@ -1,13 +1,13 @@
 <template>
   <div class="nav-bar">
-    <router-link class="logo" to="/">
+    <a class="logo" href="/">
       <div>
         <p class="initial">R</p>
         <p class="full-name">icardo</p>
         <p class="initial">&#32;B</p>
         <p class="full-name">rasileiro</p>
       </div>
-    </router-link>
+    </a>
 
     <input type="checkbox" name="" id="toggle-actions" class="toggle-actions" />
 
@@ -40,18 +40,19 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background: var(--primary-color);
+  background: var(--base-color);
   z-index: 97;
-  box-shadow: 0px 0px 6px var(--secondary-color);
+  box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .nav-bar a {
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .logo {
   display: flex;
   width: max-content;
+  color: var(--text-color);
 }
 
 .nav-bar-actions {
@@ -68,18 +69,6 @@ export default {
   text-align: center;
   margin: 0 0.15rem;
   position: relative;
-}
-
-.page-selected::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 2px;
-  background: white;
-  bottom: 0%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 95;
 }
 
 .logo div {
@@ -128,14 +117,14 @@ export default {
 }
 
 .label-toggle-actions:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--shadow-color);
 }
 
 .toggle-bar {
   width: 1.5rem;
   height: 2px;
   position: absolute;
-  background: #ffffff;
+  background: var(--text-color);
   transition: all 0.4s linear;
 }
 
@@ -199,10 +188,10 @@ export default {
     transform: none;
     width: 15rem;
     height: 100vh;
-    background: var(--primary-color);
+    background: var(--base-color);
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: 0px 0px 4px var(--secondary-color);
+    box-shadow: 0px 0px 4px var(--shadow-color);
     z-index: 96;
   }
 

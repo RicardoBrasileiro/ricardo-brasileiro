@@ -13,10 +13,13 @@
               v-for="knowledge in knowledge_info.knowledges"
               :key="knowledge.name"
             >
-              <i
-                :class="'knowledge' + ' ' + knowledge.icon"
-                :title="knowledge.name"
-              ></i>
+              <div class="knowledge">
+                <i
+                  :class="'knowledge-icon' + ' ' + knowledge.icon"
+                  :title="knowledge.name"
+                ></i>
+                <p class="knowledge-name">{{ knowledge.name }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -65,7 +68,7 @@ export default {
 }
 
 .section-name {
-  color: var(--primary-color);
+  color: var(--theme-color);
   font-weight: bold;
   margin-bottom: 3rem;
 }
@@ -78,10 +81,38 @@ export default {
 }
 
 .knowledge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.5rem;
+  position: relative;
+  cursor: default;
+}
+
+.knowledge:hover > .knowledge-icon {
+  transform: translateY(0rem);
+}
+
+.knowledge:hover > .knowledge-name {
+  opacity: 1;
+  transition: 0.2s linear;
+  transition-delay: 0.2s;
+}
+
+.knowledge-icon {
   width: 100%;
   font-size: 2.5rem;
   margin: 0 1rem;
-  color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  transform: translateY(1.2rem);
+  transition: all 0.2s linear;
+}
+
+.knowledge-name {
+  color: var(--text-color);
+  opacity: 0;
+  transition: 0;
 }
 
 @media only screen and (max-width: 700px) {

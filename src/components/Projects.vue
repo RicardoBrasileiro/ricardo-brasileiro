@@ -11,7 +11,7 @@
             <div class="project-card">
               <div class="section-card-info">
                 <p class="section-card-title">{{ project.name }}</p>
-                <p>{{ project.description }}</p>
+                <p class="section-card-desc">{{ project.description }}</p>
               </div>
               <a class="section-card-link" :href="project.clone_url"
                 >Acessar repositório</a
@@ -114,16 +114,48 @@ export default {
 .section-card-title {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.section-card-desc {
+  color: var(--text-color);
 }
 
 .section-card-link {
   padding: 0.75rem;
-  color: #ffffff;
-  background: var(--primary-color);
+  color: var(--text-color);
+  background: none;
+  border: 2px solid var(--text-color);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+.section-card-link:hover {
+  color: var(--base-color);
+}
+
+.section-card-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background: var(--text-color);
+  z-index: -1;
+  transition: all 0.3s linear;
+}
+
+.section-card-link:hover::before {
+  height: 200%;
 }
 
 .projects {
@@ -137,13 +169,13 @@ export default {
   height: 300px;
   padding: 1rem;
   margin: 1rem;
-  color: var(--primary-color);
-  background: #ffffff;
+  color: var(--theme-color);
+  background: var(--second-base-color);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 0px 3px gray;
+  box-shadow: 1px 1px 5px var(--base-color);
   transition: all 0.2s linear;
 }
 
@@ -155,16 +187,15 @@ export default {
   cursor: pointer;
   width: 50px;
   height: 50px;
-  color: #ffffff;
-  background: var(--primary-color);
+  color: var(--theme-color);
+  background: var(--second-base-color);
   border-radius: 50%;
   border: none;
-  box-shadow: 0px 0px 3px gray;
   transition: all 0.2s linear;
 }
 
 .btn-slide:hover {
-  box-shadow: 0px 0px 5px gray;
+  box-shadow: 0px 0px 3px var(--theme-color);
 }
 
 .slide-buttons {
@@ -213,8 +244,8 @@ export default {
   }
 
   .slide-buttons .btn-slide {
-    color: #ffffff;
-    background: var(--primary-color);
+    color: var(--second-base-color);
+    color: var(--theme-color);
     height: 35px;
     width: 70px;
     border-radius: 0.5rem;
