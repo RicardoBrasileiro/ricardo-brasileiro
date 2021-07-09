@@ -1,5 +1,5 @@
 {
-    "knowledges_info": [
+    "knowledges_typed": [
         {
             "section": 0,
             "sectionName": "Linguagens de programação",
@@ -67,6 +67,52 @@
                     "icon": "fas fa-database"
                 }
             ]
+        }
+    ],
+    "knowledges": [
+        {
+            "name": "Linguagem C",
+            "icon": "fab fa-cuttlefish"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "fab fa-js-square"
+        },
+        {
+            "name": "Java",
+            "icon": "fab fa-java"
+        },
+        {
+            "name": "Python",
+            "icon": "fab fa-python"
+        },
+        {
+            "name": "HTML",
+            "icon": "fab fa-html5"
+        },
+        {
+            "name": "CSS",
+            "icon": "fab fa-css3-alt"
+        },
+        {
+            "name": "React JS",
+            "icon": "fab fa-react"
+        },
+        {
+            "name": "React Native",
+            "icon": "fab fa-react"
+        },
+        {
+            "name": "Vue JS",
+            "icon": "fab fa-vuejs"
+        },
+        {
+            "name": "PostgreSQL",
+            "icon": "fas fa-database"
+        },
+        {
+            "name": "MongoDB",
+            "icon": "fas fa-database"
         }
     ]
 }

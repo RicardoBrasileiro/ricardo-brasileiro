@@ -2,29 +2,18 @@
   <div id="app" class="app">
     <NavBar />
     <article>
-      <Home />
-      <Knowledges />
-      <Projects />
-      <Theme />
+      <router-view></router-view>
     </article>
   </div>
 </template>
 
 <script>
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Knowledges from "./components/Knowledges";
-import Projects from "./components/Projects";
-import Theme from "./components/Theme";
 
 export default {
   name: "App",
   components: {
     NavBar,
-    Home,
-    Knowledges,
-    Projects,
-    Theme,
   },
 };
 </script>
@@ -33,9 +22,10 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
 
 :root {
-  --base-color: #ffffff;
-  --text-color: #1b1b1b;
-  --shadow-color: #bbbbbb;
+  --base-color: #1b1b1b;
+  --theme-color: #f48c06;
+  --text-color: #d3d3d3;
+  --shadow-color: #0c0c0c;
 
   scroll-behavior: smooth;
 }

@@ -24,15 +24,17 @@
     </div>
     <div class="social-medias">
       <a href="https://github.com/RicardoBrasileiro"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a href="https://www.linkedin.com/in/jos%C3%A9-ricardo-031b99209"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-      <a href="https://twitter.com/ricarbrg"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/jricardo_brasileiro/"
-        ><i class="fab fa-instagram"></i
-      ></a>
+        ><i class="fab fa-github"></i>GitHub</a
+      >
+      <a href="https://www.linkedin.com/in/ricarbrg/"
+        ><i class="fab fa-linkedin"></i>LinkedIn</a
+      >
+      <a href="https://twitter.com/ricarbrg/">
+        <i class="fab fa-twitter"></i>Twitter
+      </a>
+      <a href="https://www.instagram.com/ricarbrg/"
+        ><i class="fab fa-instagram"></i>Instagram</a
+      >
     </div>
   </div>
 </template>
@@ -67,17 +69,36 @@ export default {
 
 .social-medias {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
+.social-medias a {
+  color: var(--theme-color);
+  background: none;
+  border: 2px solid var(--theme-color);
+  min-width: 10rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .social-medias i {
-  color: var(--text-color);
-  font-size: 2rem;
+  color: var(--theme-color);
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
 }
 
 @media only screen and (max-width: 700px) {
   .presentation {
     width: 100%;
+  }
+
+  .description {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   .contact {

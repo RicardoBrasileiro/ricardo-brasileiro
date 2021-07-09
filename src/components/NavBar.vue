@@ -12,9 +12,9 @@
     <input type="checkbox" name="" id="toggle-actions" class="toggle-actions" />
 
     <div class="nav-bar-actions">
-      <a href="#home">Início</a>
-      <a href="#knowledges">Conhecimentos</a>
-      <a href="#projects">Projetos</a>
+      <router-link to="/home">Início</router-link>
+      <router-link to="/knowledges">Conhecimentos</router-link>
+      <router-link to="/projects">Projetos</router-link>
     </div>
     <label class="label-toggle-actions" for="toggle-actions">
       <div>
@@ -175,11 +175,6 @@ export default {
 }
 
 @media only screen and (max-width: 700px) {
-  .full-name {
-    animation: none;
-    width: 4.5rem;
-  }
-
   .nav-bar-actions {
     position: fixed;
     top: 0%;

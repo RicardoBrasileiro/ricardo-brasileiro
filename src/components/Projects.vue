@@ -1,6 +1,5 @@
 <template>
   <div class="projects my-section" id="projects">
-    <h2 class="sections-name">Projetos</h2>
     <div class="section-cards-box">
       <button class="btn-slide" v-on:click="slide('left')">
         <i class="fas fa-arrow-left"></i>
@@ -114,14 +113,15 @@ export default {
 .section-card-title {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: var(--theme-color);
   text-transform: capitalize;
 }
 
 .section-card-link {
   padding: 0.75rem;
-  color: var(--text-color);
+  color: var(--theme-color);
   background: var(--base-color);
-  border: 2px solid var(--text-color);
+  border: 2px solid var(--theme-color);
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -145,7 +145,7 @@ export default {
   height: 0%;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
-  background: var(--text-color);
+  background: var(--theme-color);
   z-index: -1;
   transition: all 0.3s linear;
 }
@@ -157,6 +157,7 @@ export default {
 .projects {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 

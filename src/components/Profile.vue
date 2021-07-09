@@ -74,7 +74,7 @@ export default {
 }
 
 .profile-info div > p {
-  color: var(--text-color);
+  color: var(--theme-color);
   font-size: 0.9rem;
 }
 

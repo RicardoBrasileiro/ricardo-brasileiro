@@ -1,25 +1,24 @@
 <template>
   <div class="knowledges my-section" id="knowledges">
-    <h2 class="sections-name">Conhecimentos</h2>
-    <div class="sections">
+    <div class="all-knowledges">
       <div
-        v-for="knowledge_info in knowledges_info"
-        :key="knowledge_info.section"
+        v-for="knowledge_section in knowledges"
+        :key="knowledge_section.name"
       >
-        <div class="section">
-          <p class="section-name">{{ knowledge_info.sectionName }}</p>
-          <div class="knowledges-box">
-            <div
-              v-for="knowledge in knowledge_info.knowledges"
-              :key="knowledge.name"
-            >
-              <div class="knowledge">
-                <i
-                  :class="'knowledge-icon' + ' ' + knowledge.icon"
-                  :title="knowledge.name"
-                ></i>
-                <p class="knowledge-name">{{ knowledge.name }}</p>
-              </div>
+        <div class="knowledge-section">
+          <p class="knowledge-section-name">
+            {{ knowledge_section.sectionName }}
+          </p>
+          <div
+            v-for="knowledge in knowledge_section.knowledges"
+            :key="knowledge.name"
+          >
+            <div class="knowledge">
+              <i
+                :class="'knowledge-icon' + ' ' + knowledge.icon"
+                :title="knowledge.name"
+              ></i>
+              <p class="knowledge-name">{{ knowledge.name }}</p>
             </div>
           </div>
         </div>
@@ -35,7 +34,7 @@ export default {
   name: "Knowledges",
   data() {
     return {
-      knowledges_info: data.knowledges_info,
+      knowledges: data.knowledges_typed,
     };
   },
 };
@@ -44,84 +43,94 @@ export default {
 <style scoped>
 .knowledges {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.sections {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 35vw;
-  margin: 3rem 0;
-  margin-bottom: 1rem;
-  z-index: 1;
-}
-
-.section-name {
-  color: var(--text-color);
-  font-weight: bold;
-  margin-bottom: 3rem;
-}
-
-.knowledges-box {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+}
+
+.all-knowledges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.knowledge-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.knowledge-section:hover > .knowledge-section-name::before {
+  animation: animatedBar 1.5s linear infinite;
+  display: unset;
+}
+
+.knowledge-section-name {
+  color: var(--text-color);
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 95;
+}
+
+.knowledge-section-name::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--text-color);
+  width: 0.5rem;
+  height: 0.25rem;
+  border-radius: 0.15rem;
+  display: none;
+}
+
+@keyframes animatedBar {
+  0% {
+    left: 0%;
+    width: 25%;
+  }
+  25% {
+    left: calc(50% - 25%);
+    width: 50%;
+  }
+  50% {
+    left: calc(100% - 25%);
+    width: 25%;
+  }
+  75% {
+    left: calc(50% - 25%);
+    width: 50%;
+  }
+  100% {
+    left: 0%;
+    width: 25%;
+  }
 }
 
 .knowledge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 0.5rem;
-  position: relative;
-  cursor: pointer;
-}
-
-.knowledge:hover > .knowledge-icon {
-  transform: translateY(0rem);
-}
-
-.knowledge:hover > .knowledge-name {
-  opacity: 1;
-  transition: 0.2s linear;
-  transition-delay: 0.2s;
-}
-
-.knowledge-icon {
-  width: 100%;
-  font-size: 2.5rem;
-  margin: 0 1rem;
   color: var(--text-color);
-  text-align: center;
-  transform: translateY(1.2rem);
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 15rem;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 2px solid var(--text-color);
+  box-shadow: 0px 0px 4px var(--shadow-color);
+  border-radius: 0.5rem;
   transition: all 0.2s linear;
 }
 
-.knowledge-name {
-  color: var(--text-color);
-  opacity: 0;
-  transition: 0;
+.knowledge:hover {
+  color: var(--theme-color);
+  border: 2px solid var(--theme-color);
 }
 
-@media only screen and (max-width: 700px) {
-  .sections {
-    flex-direction: column;
-  }
-
-  .section {
-    width: 100%;
-  }
+.knowledge-icon {
+  margin-right: 1rem;
+  font-size: 2.5rem;
 }
 </style>
