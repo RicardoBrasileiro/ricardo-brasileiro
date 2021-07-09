@@ -117,14 +117,10 @@ export default {
   text-transform: capitalize;
 }
 
-.section-card-desc {
-  color: var(--text-color);
-}
-
 .section-card-link {
   padding: 0.75rem;
   color: var(--text-color);
-  background: none;
+  background: var(--base-color);
   border: 2px solid var(--text-color);
   border-radius: 10px;
   display: flex;
@@ -169,13 +165,13 @@ export default {
   height: 300px;
   padding: 1rem;
   margin: 1rem;
-  color: var(--theme-color);
-  background: var(--second-base-color);
+  color: var(--text-color);
+  background: var(--base-color);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 1px 1px 5px var(--base-color);
+  box-shadow: 0px 0px 4px var(--shadow-color);
   transition: all 0.2s linear;
 }
 
@@ -187,15 +183,12 @@ export default {
   cursor: pointer;
   width: 50px;
   height: 50px;
-  color: var(--theme-color);
+  color: var(--text-color);
   background: var(--second-base-color);
+  box-shadow: 0px 0px 4px var(--shadow-color);
   border-radius: 50%;
   border: none;
   transition: all 0.2s linear;
-}
-
-.btn-slide:hover {
-  box-shadow: 0px 0px 3px var(--theme-color);
 }
 
 .slide-buttons {
@@ -244,8 +237,7 @@ export default {
   }
 
   .slide-buttons .btn-slide {
-    color: var(--second-base-color);
-    color: var(--theme-color);
+    color: var(--text-color);
     height: 35px;
     width: 70px;
     border-radius: 0.5rem;

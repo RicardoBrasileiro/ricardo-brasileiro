@@ -68,7 +68,7 @@ export default {
 }
 
 .section-name {
-  color: var(--theme-color);
+  color: var(--text-color);
   font-weight: bold;
   margin-bottom: 3rem;
 }
@@ -86,7 +86,7 @@ export default {
   align-items: center;
   margin: 0 0.5rem;
   position: relative;
-  cursor: default;
+  cursor: pointer;
 }
 
 .knowledge:hover > .knowledge-icon {

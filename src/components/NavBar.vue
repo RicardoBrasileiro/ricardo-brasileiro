@@ -42,7 +42,7 @@ export default {
   padding: 1rem;
   background: var(--base-color);
   z-index: 97;
-  box-shadow: 0px 0px 4px var(--shadow-color);
+  box-shadow: 0px 0px 8px var(--shadow-color);
 }
 
 .nav-bar a {

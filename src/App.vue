@@ -5,6 +5,7 @@
       <Home />
       <Knowledges />
       <Projects />
+      <Theme />
     </article>
   </div>
 </template>
@@ -14,6 +15,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Knowledges from "./components/Knowledges";
 import Projects from "./components/Projects";
+import Theme from "./components/Theme";
 
 export default {
   name: "App",
@@ -22,6 +24,7 @@ export default {
     Home,
     Knowledges,
     Projects,
+    Theme,
   },
 };
 </script>
@@ -30,11 +33,9 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
 
 :root {
-  --base-color: #000000;
-  --theme-color: #0077b6;
-  --second-base-color: #0c0c0c;
-  --text-color: #d1d1d1;
-  --shadow-color: #3d3d3d;
+  --base-color: #ffffff;
+  --text-color: #1b1b1b;
+  --shadow-color: #bbbbbb;
 
   scroll-behavior: smooth;
 }
@@ -66,7 +67,7 @@ article {
 
 .sections-name {
   margin: 2rem 0;
-  color: var(--theme-color);
+  color: var(--text-color);
 }
 
 .sections-name::after {

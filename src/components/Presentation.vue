@@ -71,7 +71,7 @@ export default {
 }
 
 .social-medias i {
-  color: var(--theme-color);
+  color: var(--text-color);
   font-size: 2rem;
 }
 

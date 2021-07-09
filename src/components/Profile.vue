@@ -41,7 +41,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--text-color);
+  box-shadow: 0px 0px 3px var(--shadow-color);
   border-radius: 50%;
 }
 
@@ -79,7 +79,7 @@ export default {
 }
 
 .profile-info div div p {
-  color: var(--theme-color);
+  color: var(--text-color);
   font-size: 1rem;
 }
 
