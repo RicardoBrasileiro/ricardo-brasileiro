@@ -50,20 +50,15 @@ export default {
       .then((response) => {
         let repos = response.data;
         repos.map((repo) => {
-          axios
-            .get(
-              "https://api.github.com/repos/RicardoBrasileiro/" +
-                repo.name +
-                "/commits"
-            )
-            .then((res) => {
-              repo.commits = res.data.length;
-              if (repo.name != "RicardoBrasileiro") {
-                if (repo.commits > 15 && !repo.fork) {
-                  this.projects.push(repo);
-                }
-              }
-            });
+          let description = repo.description;
+          if (description && description.indexOf("(PP)") != -1) {
+            description = description.substr(0, description.indexOf("(PP)"));
+            let name = repo.name;
+            let nameSplited = name.split("-");
+            repo.name = nameSplited.join(" ");
+            repo.description = description;
+            this.projects.push(repo);
+          }
         });
       });
   },

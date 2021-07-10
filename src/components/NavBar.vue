@@ -11,10 +11,14 @@
 
     <input type="checkbox" name="" id="toggle-actions" class="toggle-actions" />
 
-    <div class="nav-bar-actions">
-      <router-link to="/home">Início</router-link>
-      <router-link to="/knowledges">Conhecimentos</router-link>
-      <router-link to="/projects">Projetos</router-link>
+    <div class="nav-bar-actions" v-on:click="checkRoute()">
+      <router-link :class="this.page + '-home'" to="/home">Início</router-link>
+      <router-link :class="this.page + '-knowledges'" to="/knowledges"
+        >Conhecimentos</router-link
+      >
+      <router-link :class="this.page + '-projects'" to="/projects"
+        >Projetos</router-link
+      >
     </div>
     <label class="label-toggle-actions" for="toggle-actions">
       <div>
@@ -29,6 +33,22 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+    return {
+      page: "home",
+    };
+  },
+  beforeMount() {
+    this.checkRoute();
+  },
+  methods: {
+    checkRoute: function () {
+      let local = window.location.hash;
+      let pageRoute = local.substr(2, local.length);
+      console.log(pageRoute);
+      this.page = pageRoute;
+    },
+  },
 };
 </script>
 
@@ -69,6 +89,13 @@ export default {
   text-align: center;
   margin: 0 0.15rem;
   position: relative;
+  transition: all 0.2s linear;
+}
+
+.home-home,
+.knowledges-knowledges,
+.projects-projects {
+  color: var(--theme-color) !important;
 }
 
 .logo div {
