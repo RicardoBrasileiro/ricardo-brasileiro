@@ -41,6 +41,18 @@ export default {
 </script>
 
 <style scoped>
+/* CSS Model */
+/*
+ * display
+ * size
+ * position
+ * colors
+ * borders
+ * shadows
+ * index
+ * transition
+*/
+
 .knowledges {
   display: flex;
   justify-content: center;
@@ -64,28 +76,26 @@ export default {
 }
 
 .knowledge-section-name {
-  color: var(--text-color);
-  font-weight: 700;
-  padding-bottom: 0.25rem;
   margin: 1rem 0 0.5rem 0;
+  padding-bottom: 0.25rem;
   position: relative;
+  color: var(--text-color);
   overflow: hidden;
   z-index: 95;
   transition: all 0.2s linear;
 }
 
 .knowledge {
-  color: var(--text-color);
   display: flex;
   position: relative;
   align-items: center;
   width: 15rem;
   margin: 1rem;
   padding: 0.5rem 1rem;
-  cursor: pointer;
+  color: var(--text-color);
   border: 2px solid var(--text-color);
-  box-shadow: 0px 0px 4px var(--shadow-color);
   border-radius: 0.5rem;
+  cursor: pointer;
   transition: all 0.2s linear;
 }
 

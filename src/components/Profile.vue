@@ -29,6 +29,18 @@ export default {
 </script>
 
 <style scoped>
+/* CSS Model */
+/*
+ * display
+ * size
+ * position
+ * colors
+ * borders
+ * shadows
+ * index
+ * transition
+*/
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -36,11 +48,11 @@ export default {
 }
 
 .profile-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 260px;
   height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0px 0px 3px var(--shadow-color);
   border-radius: 50%;
 }
@@ -57,36 +69,34 @@ export default {
 
 .profile-info > div {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   margin-top: 3rem;
 }
 
 .profile-info div div {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   margin: 0.5rem 0;
-}
-
-.profile-info div p {
-  font-weight: bold;
 }
 
 .profile-info div > p {
   color: var(--theme-color);
   font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .profile-info div div p {
   color: var(--text-color);
   font-size: 1rem;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 700px) {
   .profile {
-    width: 100%;
     align-items: center;
+    width: 100%;
     margin: 2rem 0;
   }
 
@@ -98,8 +108,8 @@ export default {
 
   .profile-info div div {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
 
   .profile-info div div p {

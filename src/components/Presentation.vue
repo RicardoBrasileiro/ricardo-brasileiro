@@ -2,7 +2,7 @@
   <div class="presentation">
     <div class="description">
       <p>
-        Olá, seja bem-vindo ao meu portfólio, aqui você vai encontrar mais
+        Olá, seja bem-vindo ao meu site, aqui você vai encontrar mais
         informações sobre mim. Você pode ir na aba de “Conhecimentos”, onde
         descrevo as linguagens e frameworks que utilizo em desenvolvimento de
         aplicações, já na área de "Projetos" você vai encontrar alguns projetos
@@ -46,11 +46,23 @@ export default {
 </script>
 
 <style scoped>
+/* CSS Model */
+/*
+ * display
+ * size
+ * position
+ * colors
+ * borders
+ * shadows
+ * index
+ * transition
+*/
+
 .presentation {
-  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 60%;
 }
 
 .description {
@@ -58,9 +70,9 @@ export default {
 }
 
 .presentation .description p {
+  margin: 1rem 0;
   color: var(--text-color);
   text-align: justify;
-  margin: 1rem 0;
 }
 
 .presentation .description p:nth-child(1) {
@@ -74,22 +86,22 @@ export default {
 }
 
 .social-medias a {
-  color: var(--theme-color);
-  background: none;
-  border: 2px solid var(--theme-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 10rem;
   padding: 0.5rem;
   margin: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: .5rem;
+  color: var(--theme-color);
+  background: none;
+  border: 2px solid var(--theme-color);
+  border-radius: 0.5rem;
 }
 
 .social-medias i {
+  margin-right: 0.5rem;
   color: var(--theme-color);
   font-size: 1.1rem;
-  margin-right: 0.5rem;
 }
 
 @media only screen and (max-width: 700px) {

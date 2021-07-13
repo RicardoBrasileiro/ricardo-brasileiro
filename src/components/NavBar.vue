@@ -45,7 +45,6 @@ export default {
     checkRoute: function () {
       let local = window.location.hash;
       let pageRoute = local.substr(2, local.length);
-      console.log(pageRoute);
       this.page = pageRoute;
     },
   },
@@ -53,16 +52,28 @@ export default {
 </script>
 
 <style scoped>
+/* CSS Model */
+/*
+ * display
+ * size
+ * position
+ * colors
+ * borders
+ * shadows
+ * index
+ * transition
+*/
+
 .nav-bar {
-  width: 100%;
-  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 1rem;
+  position: fixed;
   background: var(--base-color);
-  z-index: 97;
   box-shadow: 0px 0px 8px var(--shadow-color);
+  z-index: 97;
 }
 
 .nav-bar a {
@@ -76,19 +87,20 @@ export default {
 }
 
 .nav-bar-actions {
-  position: absolute;
-  width: 25rem;
   display: flex;
   justify-content: space-between;
+  width: 25rem;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.4s linear;
 }
 
 .nav-bar-actions a {
-  text-align: center;
   margin: 0 0.15rem;
+  padding: 1rem 0.5rem;
   position: relative;
+  text-align: center;
   transition: all 0.2s linear;
 }
 
@@ -112,11 +124,11 @@ export default {
 }
 
 .full-name {
-  font-weight: normal;
-  position: relative;
   width: 0px;
-  animation: 3s name linear normal;
+  position: relative;
+  font-weight: normal;
   overflow: hidden;
+  animation: 3s name linear normal;
 }
 
 .toggle-actions {
@@ -129,8 +141,8 @@ export default {
 
 .label-toggle-actions {
   display: none;
-  cursor: pointer;
   padding: 0.5rem;
+  cursor: pointer;
   border-radius: 0.25rem;
   z-index: 96;
   transition: all 0.2s linear;
@@ -139,8 +151,8 @@ export default {
 .label-toggle-actions > div {
   width: 1.5rem;
   height: 1rem;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
 .label-toggle-actions:hover {
@@ -160,8 +172,8 @@ export default {
 }
 
 .toggle-bar:nth-child(1) {
-  right: 0%;
   top: 50%;
+  right: 0%;
   transform: translateY(-50%);
 }
 
@@ -170,8 +182,8 @@ export default {
 }
 
 .toggle-actions:checked ~ .label-toggle-actions .toggle-bar:nth-child(3) {
-  transform: rotateZ(45deg);
   top: 45%;
+  transform: rotateZ(45deg);
 }
 
 .toggle-actions:checked ~ .label-toggle-actions .toggle-bar:nth-child(1) {
@@ -179,8 +191,8 @@ export default {
 }
 
 .toggle-actions:checked ~ .label-toggle-actions .toggle-bar:nth-child(2) {
-  transform: rotateZ(-45deg);
   bottom: 45%;
+  transform: rotateZ(-45deg);
 }
 
 @keyframes name {
@@ -203,17 +215,17 @@ export default {
 
 @media only screen and (max-width: 700px) {
   .nav-bar-actions {
-    position: fixed;
-    top: 0%;
-    right: -100%;
-    left: unset;
-    transform: none;
-    width: 15rem;
-    height: 100vh;
-    background: var(--base-color);
     flex-direction: column;
     justify-content: space-around;
+    width: 15rem;
+    height: 100vh;
+    position: fixed;
+    top: 0%;
+    left: unset;
+    right: -100%;
+    background: var(--base-color);
     box-shadow: 0px 0px 4px var(--shadow-color);
+    transform: none;
     z-index: 96;
   }
 

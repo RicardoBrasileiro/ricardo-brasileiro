@@ -19,6 +19,18 @@ export default {
 </script>
 
 <style>
+/* CSS Model */
+/*
+ * display
+ * size
+ * position
+ * colors
+ * borders
+ * shadows
+ * index
+ * transition
+*/
+
 #home {
   padding-top: 5rem;
 }

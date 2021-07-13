@@ -87,6 +87,18 @@ export default {
 </script>
 
 <style scoped>
+/* CSS Model */
+/*
+ * display
+ * size
+ * position
+ * colors
+ * borders
+ * shadows
+ * index
+ * transition
+*/
+
 .section-cards-box {
   display: flex;
   align-items: center;
@@ -95,33 +107,33 @@ export default {
 }
 
 .section-cards {
+  margin: 0 1rem;
   overflow: hidden;
   scroll-behavior: smooth;
-  margin: 0 1rem;
 }
 
 .section-cards > div {
-  width: max-content;
   display: flex;
+  width: max-content;
 }
 
 .section-card-title {
-  font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--theme-color);
+  font-weight: bold;
   text-transform: capitalize;
 }
 
 .section-card-link {
+  display: flex;
+  justify-content: center;
   padding: 0.75rem;
+  position: relative;
   color: var(--theme-color);
   background: var(--base-color);
   border: 2px solid var(--theme-color);
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
   text-align: center;
-  position: relative;
   z-index: 1;
   overflow: hidden;
   transition: all 0.3s linear;
@@ -133,14 +145,14 @@ export default {
 
 .section-card-link::before {
   content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 0%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: var(--theme-color);
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
-  background: var(--theme-color);
   z-index: -1;
   transition: all 0.3s linear;
 }
@@ -151,22 +163,22 @@ export default {
 
 .projects {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .project-card {
-  width: 350px;
-  height: 300px;
-  padding: 1rem;
-  margin: 1rem;
-  color: var(--text-color);
-  background: var(--base-color);
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 350px;
+  height: 300px;
+  margin: 1rem;
+  padding: 1rem;
+  color: var(--text-color);
+  background: var(--base-color);
+  border-radius: 10px;
   box-shadow: 0px 0px 4px var(--shadow-color);
   transition: all 0.2s linear;
 }
@@ -176,14 +188,14 @@ export default {
 }
 
 .btn-slide {
-  cursor: pointer;
   width: 50px;
   height: 50px;
   color: var(--text-color);
   background: var(--second-base-color);
-  box-shadow: 0px 0px 4px var(--shadow-color);
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px var(--shadow-color);
+  cursor: pointer;
   transition: all 0.2s linear;
 }
 
@@ -217,8 +229,8 @@ export default {
   }
 
   .section-cards-box {
-    width: max-content;
     flex-direction: column;
+    width: max-content;
   }
 
   .section-cards-box > .btn-slide {
@@ -227,15 +239,15 @@ export default {
 
   .slide-buttons {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     padding: 0 2rem;
-    justify-content: space-between;
   }
 
   .slide-buttons .btn-slide {
-    color: var(--text-color);
-    height: 35px;
     width: 70px;
+    height: 35px;
+    color: var(--text-color);
     border-radius: 0.5rem;
   }
 }

@@ -10,15 +10,17 @@ export default {
   name: "Theme",
   data() {
     return {
-      icon: "moon",
-      theme: "light",
+      icon: "sun",
+      theme: "dark",
       lightColors: [
         { property: "--base-color", value: "#ffffff" },
+        { property: "--theme-color", value: "#0ead69" },
         { property: "--shadow-color", value: "#bbbbbb" },
-        { property: "--text-color", value: "#1b1b1b" },
+        { property: "--text-color", value: "#585858" },
       ],
       darkColors: [
         { property: "--base-color", value: "#1b1b1b" },
+        { property: "--theme-color", value: "#0ead69" },
         { property: "--shadow-color", value: "#0c0c0c" },
         { property: "--text-color", value: "#d3d3d3" },
       ],
@@ -31,7 +33,6 @@ export default {
       });
     },
     verifyTheme: function () {
-      console.log(this.theme);
       if (this.theme == "light") {
         this.setTheme(this.darkColors);
         this.theme = "dark";
@@ -46,6 +47,18 @@ export default {
 };
 </script>
 <style scoped>
+/* CSS Model */
+/*
+ * display
+ * size
+ * position
+ * colors
+ * borders
+ * shadows
+ * index
+ * transition
+*/
+
 .Theme {
   position: fixed;
   bottom: 3rem;
@@ -54,13 +67,13 @@ export default {
 }
 
 .Theme button {
-  cursor: pointer;
+  padding: 0.5rem;
   color: var(--base-color);
   background: var(--text-color);
-  padding: 0.5rem;
+  border: none;
   border-radius: 50%;
   box-shadow: 0px 0px 4px var(--shadow-color);
-  border: none;
+  cursor: pointer;
   transition: all 0.2s linear;
 }
 
@@ -70,8 +83,8 @@ export default {
 
 .Theme i {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 2rem;
   height: 2rem;
   font-size: 1.3rem;
