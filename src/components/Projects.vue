@@ -46,7 +46,7 @@ export default {
   },
   created: function () {
     axios
-      .get("https://api.github.com/users/RicardoBrasileiro/repos")
+      .get("https://api.github.com/users/ricardobgx/repos")
       .then((response) => {
         let repos = response.data;
         repos.map((repo) => {

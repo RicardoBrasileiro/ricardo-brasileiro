@@ -23,16 +23,16 @@
       </p>
     </div>
     <div class="social-medias">
-      <a href="https://github.com/RicardoBrasileiro"
+      <a href="https://github.com/ricardobgx"
         ><i class="fab fa-github"></i>GitHub</a
       >
-      <a href="https://www.linkedin.com/in/ricarbrg/"
+      <a href="https://www.linkedin.com/in/ricardobgx/"
         ><i class="fab fa-linkedin"></i>LinkedIn</a
       >
-      <a href="https://twitter.com/ricarbrg/">
+      <a href="https://twitter.com/ricardobgx/">
         <i class="fab fa-twitter"></i>Twitter
       </a>
-      <a href="https://www.instagram.com/ricarbrg/"
+      <a href="https://www.instagram.com/ricardobgx/"
         ><i class="fab fa-instagram"></i>Instagram</a
       >
     </div>
