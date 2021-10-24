@@ -5,6 +5,11 @@ export const NavBarBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  position: absolute;
+
+  @media (max-width: 60rem) {
+    display: none;
+  }
 `;
 
 export const NavBarActions = styled.div`

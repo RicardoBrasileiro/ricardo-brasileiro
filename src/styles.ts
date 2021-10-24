@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
@@ -11,4 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     font-family: 'Ubuntu', sans-serif;
   }
+`;
+
+export const Page = styled.div`
+  min-height: calc(100vh - 2rem);
 `;

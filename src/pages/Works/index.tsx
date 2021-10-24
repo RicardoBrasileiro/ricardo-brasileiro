@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../../components/NavBar';
 import { IRoute } from '../../routes';
 
 const Works = (props: IRoute): JSX.Element => {

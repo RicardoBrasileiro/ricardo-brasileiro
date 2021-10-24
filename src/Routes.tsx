@@ -7,11 +7,11 @@ import {
   Route,
   RouteComponentProps,
 } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import NavBar from './components/App/NavBar';
 import routes from './routes';
 
 const handleLink = (pageName: string): number => {
-  const pages = ['home', 'projects', 'skills', 'works', 'contact'];
+  const pages = ['', 'projects', 'skills', 'works', 'contact'];
 
   return pages.indexOf(pageName);
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavBarAction, NavBarActions, NavBarBox } from './styles';
-import theme from '../../global/styles/themes';
+import theme from '../../../global/styles/themes';
 
 interface INavBarProps {
   selectedLink: number;
