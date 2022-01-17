@@ -3,11 +3,6 @@ import Profile from '../../components/Home/Profile';
 import SocialMediaLink from '../../components/Home/SocialMediaLink';
 import { HomeBox, SocialMediaLinks } from './styles';
 
-import githubIcon from '../../assets/icons/github.png';
-import linkedinIcon from '../../assets/icons/linkedin.png';
-import twitterIcon from '../../assets/icons/twitter.png';
-import instagramIcon from '../../assets/icons/instagram.png';
-
 const Home = (): JSX.Element => {
   return (
     <HomeBox>
