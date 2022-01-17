@@ -1,27 +1,34 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-export const SocialMediaLinkBox = styled(Link)`
+export const SocialMediaLinkBox = styled.button`
+  width: 200px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 0rem 3rem;
-
-  @media (max-width: 60rem) {
-    margin: 0.5rem 1rem;
-  }
-`;
-export const SocialMediaIcon = styled.i`
-  font-size: 20px;
-  margin-right: 0.75rem;
-  color: ${({ color }) => color};
-`;
-export const SocialMediaLabel = styled.p`
-  font-size: 20px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.black};
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid ${({ theme }) => theme.similarColors.primaryColor};
+  color: ${({ theme }) => theme.similarColors.primaryColor};
+  cursor: pointer;
   transition: all 0.2s linear;
 
   &:hover {
-    color: ${({ color }) => color};
+    background: ${({ theme }) => theme.similarColors.primaryColor};
+    color: ${({ theme }) => theme.colors.white};
   }
+
+  @media (max-width: 900px) {
+    margin: 10px 0px;
+    width: 45%;
+  }
+`;
+export const SocialMediaIcon = styled.i`
+  width: 20px;
+  margin-right: 10px;
+  font-size: 18px;
+`;
+export const SocialMediaLabel = styled.p`
+  font-size: 18px;
+  font-weight: 500;
 `;

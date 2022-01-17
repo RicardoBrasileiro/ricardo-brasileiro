@@ -1,81 +1,91 @@
-import React from 'react';
-import { NavBarAction, NavBarActions, NavBarBox } from './styles';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLocation, useRouteMatch } from 'react-router-dom';
+import {
+  Logo,
+  MenuIcon,
+  MenuIconBar,
+  NavBarAction,
+  NavBarActions,
+  NavBarBox,
+  ToggleMenuCheckBox,
+} from './styles';
 import theme from '../../../global/styles/themes';
+import { useSelectedLinkContext } from '../../../context/SelectedLink';
 
-interface INavBarProps {
-  selectedLink: number;
-  setSelectedLink: React.Dispatch<React.SetStateAction<number>>;
+interface ILink {
+  label: string;
+  path: string;
 }
 
-const NavBar = (props: INavBarProps): JSX.Element => {
-  const { selectedLink, setSelectedLink } = props;
+const links: ILink[] = [
+  {
+    label: 'Início',
+    path: '/',
+  },
+  {
+    label: 'Projetos',
+    path: '/projects',
+  },
+  {
+    label: 'Habilidades',
+    path: '/skills',
+  },
+  {
+    label: 'Trabalhos',
+    path: '/works',
+  },
+  {
+    label: 'Contato',
+    path: '/contact',
+  },
+];
 
-  const linkWidth = 12;
+const NavBar = (): JSX.Element => {
+  const { selectedLink, setSelectedLink } = useSelectedLinkContext();
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [pageScroll, setPageScroll] = useState(0);
 
-  const selectedLinkStyle = {
-    color: theme.colors.lightRed,
-    left: `${2 * linkWidth}rem`,
+  const route = useLocation();
+  const { pathname } = route;
+
+  const handleScroll = (): void => {
+    const scroll = document.documentElement.scrollTop;
+    setPageScroll(scroll);
   };
 
-  const setLinkLeft = (numberPosition: number): number => {
-    if (numberPosition === selectedLink) {
-      return 2;
-    }
-    if (numberPosition > selectedLink && numberPosition <= 2) {
-      return numberPosition - 1;
-    }
-    if (numberPosition === 2 && selectedLink > 2) {
-      return numberPosition + 1;
-    }
-    if (numberPosition === 3 && selectedLink > numberPosition) {
-      return numberPosition + 1;
-    }
-    return numberPosition;
-  };
-
-  interface ILink {
-    label: string;
-    path: string;
-  }
-
-  const links: ILink[] = [
-    {
-      label: 'Início',
-      path: '/',
-    },
-    {
-      label: 'Projetos',
-      path: '/projects',
-    },
-    {
-      label: 'Habilidades',
-      path: '/skills',
-    },
-    {
-      label: 'Trabalhos',
-      path: '/works',
-    },
-    {
-      label: 'Contato',
-      path: '/contact',
-    },
-  ];
+  useEffect(() => {
+    setSelectedLink(pathname);
+    window.onscroll = () => handleScroll();
+  }, [pathname]);
 
   return (
-    <NavBarBox>
-      <NavBarActions>
+    <NavBarBox
+      style={{
+        boxShadow: pageScroll > 0 ? '0px 0px 4px rgba(0, 0, 0, 0.2)' : '',
+      }}
+    >
+      <Logo to="/">RB</Logo>
+      <ToggleMenuCheckBox type="checkbox" checked={toggleMenu} />
+      <MenuIcon
+        className="menu-icon"
+        onClick={() => setToggleMenu(!toggleMenu)}
+      >
+        <MenuIconBar />
+        <MenuIconBar />
+        <MenuIconBar />
+      </MenuIcon>
+      <NavBarActions className="nav-bar-actions">
         {links.map((link, index) => (
           <NavBarAction
+            onClick={() => setToggleMenu(false)}
+            className={selectedLink === index ? 'selected-link' : ''}
             key={link.label}
-            onClick={() => setSelectedLink(index)}
-            style={
-              index === selectedLink
-                ? {
-                    ...selectedLinkStyle,
-                    left: `${setLinkLeft(index) * linkWidth}rem`,
-                  }
-                : { left: `${setLinkLeft(index) * linkWidth}rem` }
-            }
+            style={{
+              color:
+                index === selectedLink ? theme.similarColors.primaryColor : '',
+              borderColor:
+                index === selectedLink ? theme.similarColors.primaryColor : '',
+            }}
             to={link.path}
           >
             {link.label}

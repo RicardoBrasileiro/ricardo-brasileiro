@@ -14,11 +14,15 @@ const ProfileInfo = (): JSX.Element => {
     <ProfileInfoBox>
       <InfoBox>
         <NameLabel>Ricardo Brasileiro</NameLabel>
-        <OfficeLabel>Desenvolvedor full-stack</OfficeLabel>
+        <OfficeLabel>Desenvolvedor front-end</OfficeLabel>
         <Description>
-          Desenvolvendo aplicações fieis, rápidas e robustas, sou Ricardo,
-          estudante do curso de Análise e Desenvolvimento de Sistemas no
-          Instituto Federal da Paraíba
+          Olá, me chamo Ricardo. Estou graduando Análise e Desenvolvimento de
+          Sistemas no Instituto Federal da Paraíba - IFPB. Gosto de implementar
+          interfaces e ver o resultado das coisas que faço, no momento também
+          estou aprendendo a construir o back-end de aplicações, podendo assim
+          me tornar um desenvolvedor full-stack. Gosto de interagir com as
+          pessoas e poder ajudá-las quando necessário, alguns dos meus hobbies
+          são jogos e música, além de, claro, programar {'</>'}.
         </Description>
       </InfoBox>
       <ContactMeButton to="/contact">

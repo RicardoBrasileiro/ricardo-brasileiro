@@ -11,6 +11,21 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     font-family: 'Ubuntu', sans-serif;
   }
+
+  body {
+    background: ${({ theme }) => theme.colors.background};
+  }
+
+  /* Animacoes */
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Page = styled.div`

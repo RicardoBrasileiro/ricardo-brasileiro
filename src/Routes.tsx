@@ -10,22 +10,10 @@ import {
 import NavBar from './components/App/NavBar';
 import routes from './routes';
 
-const handleLink = (pageName: string): number => {
-  const pages = ['', 'projects', 'skills', 'works', 'contact'];
-
-  return pages.indexOf(pageName);
-};
-
 const Routes = (): JSX.Element => {
-  const [selectedLink, setSelectedLink] = useState(
-    handleLink(
-      window.location.pathname.substr(1, window.location.pathname.length),
-    ),
-  );
-
   return (
     <BrowserRouter>
-      <NavBar selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
+      <NavBar />
       <Switch>
         {routes.map((route) => {
           return (

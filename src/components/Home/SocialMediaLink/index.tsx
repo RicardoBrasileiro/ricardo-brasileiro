@@ -13,12 +13,21 @@ interface ISocialMediaLinkProps {
 }
 
 const SocialMediaLink = (props: ISocialMediaLinkProps): JSX.Element => {
-  const { color, icon, label, to } = props;
+  const { color: propsColor, icon, label, to } = props;
+
+  const openSocialMediaLink = (url: string): void => {
+    window.open(url);
+  };
+
+  const themeType = 'dark';
+
+  const color =
+    propsColor === '#000000' && themeType === 'dark' ? '#FFFFFF' : propsColor;
 
   return (
-    <SocialMediaLinkBox to={to}>
-      <SocialMediaIcon color={color} className={icon} />
-      <SocialMediaLabel color={color}>{label}</SocialMediaLabel>
+    <SocialMediaLinkBox color={color} onClick={() => openSocialMediaLink(to)}>
+      <SocialMediaIcon className={`fab fa-${icon}`} />
+      <SocialMediaLabel>{label}</SocialMediaLabel>
     </SocialMediaLinkBox>
   );
 };

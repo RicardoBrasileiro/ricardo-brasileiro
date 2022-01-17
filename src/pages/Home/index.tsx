@@ -3,6 +3,11 @@ import Profile from '../../components/Home/Profile';
 import SocialMediaLink from '../../components/Home/SocialMediaLink';
 import { HomeBox, SocialMediaLinks } from './styles';
 
+import githubIcon from '../../assets/icons/github.png';
+import linkedinIcon from '../../assets/icons/linkedin.png';
+import twitterIcon from '../../assets/icons/twitter.png';
+import instagramIcon from '../../assets/icons/instagram.png';
+
 const Home = (): JSX.Element => {
   return (
     <HomeBox>
@@ -10,26 +15,26 @@ const Home = (): JSX.Element => {
       <SocialMediaLinks>
         <SocialMediaLink
           color="#000000"
-          to="/projects"
-          icon="fab fa-github-square"
+          to="https://github.com/ricardobgx"
+          icon="github"
           label="Github"
         />
         <SocialMediaLink
           color="#0077B5"
-          to="/projects"
-          icon="fab fa-linkedin"
+          to="https://www.linkedin.com/in/ricardobgx/"
+          icon="linkedin"
           label="LinkedIn"
         />
         <SocialMediaLink
           color="#03A9F4"
-          to="/projects"
-          icon="fab fa-twitter"
+          to="https://twitter.com/ricardobgx"
+          icon="twitter"
           label="Twitter"
         />
         <SocialMediaLink
           color="#F02093"
-          to="/projects"
-          icon="fab fa-instagram"
+          to="https://www.instagram.com/ricardobgx/"
+          icon="instagram"
           label="Instagram"
         />
       </SocialMediaLinks>
