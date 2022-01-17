@@ -29,7 +29,9 @@ export const ProjectName = styled.p`
   color: ${({ theme }) => theme.similarColors.primaryColor};
   margin-bottom: 10px;
 `;
-export const ProjectDescription = styled.p``;
+export const ProjectDescription = styled.p`
+  color: ${({ theme }) => theme.colors.textColor};
+`;
 export const ProjectImage = styled.img`
   border-radius: 10px;
   height: 300px;

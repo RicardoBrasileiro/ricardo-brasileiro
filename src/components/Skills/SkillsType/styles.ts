@@ -14,6 +14,7 @@ export const SkillsTypeBox = styled.div`
 export const SkillTypeName = styled.p`
   margin-top: 20px;
   text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.textColor};
 `;
 export const TypeSkills = styled.div`
   width: 25vw;

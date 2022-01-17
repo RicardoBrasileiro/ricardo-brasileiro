@@ -5,6 +5,7 @@ export const SkillBox = styled.div`
   flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
+  color: ${({ theme }) => theme.similarColors.primaryColor};
 `;
 export const SkillName = styled.p`
   margin-bottom: 5px;
