@@ -13,6 +13,7 @@ export const SkillsTypeBox = styled.div`
 `;
 export const SkillTypeName = styled.p`
   margin-top: 20px;
+  font-weight: bold;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.textColor};
 `;
@@ -21,7 +22,8 @@ export const TypeSkills = styled.div`
   height: 300px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 4px ${({ theme }) => theme.colors.boxShadowColor};
+  background: ${({ theme }) => theme.colors.boxColor};
 
   @media (max-width: 900px) {
     width: 100%;

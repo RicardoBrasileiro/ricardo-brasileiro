@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const ProjectSlideBox = styled.div`
   min-width: calc(70vw - 20px);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 4px ${({ theme }) => theme.colors.boxShadowColor};
   border-radius: 10px;
   padding: 20px;
   display: flex;
   text-align: justify;
   margin: 0 10px;
+  background: ${({ theme }) => theme.colors.boxColor};
 
   @media (max-width: 900px) {
     flex-wrap: wrap-reverse;

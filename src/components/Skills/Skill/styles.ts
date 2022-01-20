@@ -9,6 +9,7 @@ export const SkillBox = styled.div`
 `;
 export const SkillName = styled.p`
   margin-bottom: 5px;
+  font-weight: bold;
 `;
 export const SkillProgress = styled.div`
   height: 10px;

@@ -1,15 +1,17 @@
 const themeType = window.localStorage.getItem('theme');
 
 const similarColors = {
-  primaryColor: '#7b2cbf',
+  primaryColor: '#a100f2',
 };
 
 const lightTheme = {
   colors: {
-    background: '#FFFFFF',
+    background: '#FCFCFC',
     name: '#000000',
     contact_me: '#FFFFFF',
     textColor: '#BABABA',
+    boxColor: '#FFFFFF',
+    boxShadowColor: 'rgba(0, 0, 0, 0.25)',
     white: '#FFFFFF',
     black: '#000000',
     lightRed: '#D90429',
@@ -22,10 +24,12 @@ const lightTheme = {
 
 const darkTheme = {
   colors: {
-    background: '#1B1B1B',
+    background: '#212121',
     name: '#DCDCDC',
     contact_me: '#DCDCDC',
     textColor: '#DCDCDC',
+    boxColor: '#3C3C3C',
+    boxShadowColor: 'rgba(0, 0, 0, 0.25)',
     white: '#FFFFFF',
     black: '#000000',
     lightRed: '#D90429',

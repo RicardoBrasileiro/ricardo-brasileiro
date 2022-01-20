@@ -1,11 +1,12 @@
 import React from 'react';
-import { IRoute } from '../../routes';
+import WorksList from '../../components/Works/WorksList';
+import { WorksBox } from './styles';
 
-const Works = (props: IRoute): JSX.Element => {
+const Works = (): JSX.Element => {
   return (
-    <div>
-      <p>Início</p>
-    </div>
+    <WorksBox>
+      <WorksList />
+    </WorksBox>
   );
 };
 

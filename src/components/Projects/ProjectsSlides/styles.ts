@@ -32,7 +32,7 @@ export const ProjectsSlidesActions = styled.div`
   z-index: 92;
 `;
 export const SlideButton = styled.button`
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.boxColor};
   border: none;
   height: 45px;
   width: 45px;
