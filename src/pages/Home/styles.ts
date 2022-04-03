@@ -1,36 +1,32 @@
 import styled from 'styled-components';
+import { PageBox } from '../../styles';
 
-export const HomeBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0 80px;
-  animation: fadeIn 0.2s linear;
-  position: relative;
-
+export const HomeBox = styled(PageBox)`
   @media (max-width: 900px) {
-    padding-top: 100px;
-    padding-bottom: 30px;
-    margin: 0 40px;
-    min-height: 100%;
-    justify-content: space-between;
+    padding: 100px 0;
   }
 `;
-
-export const SocialMediaLinks = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100px;
+export const TopWave = styled.img`
   position: absolute;
-  bottom: 0%;
-  width: 100%;
-  justify-content: space-between;
+  bottom: 0;
+  right: 0;
+  height: 95vh;
+  z-index: -1;
 
   @media (max-width: 900px) {
-    position: relative;
-    flex-wrap: wrap;
+    width: 50vw;
     height: unset;
-    margin-top: 20px;
+  }
+`;
+export const BottomWave = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  z-index: -2;
+
+  @media (max-width: 900px) {
+    width: 55vw;
+    height: unset;
   }
 `;

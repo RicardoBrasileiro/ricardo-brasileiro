@@ -1,6 +1,6 @@
 export interface IWork {
-  company: string;
-  startYear: string;
-  finishYear: string;
+  enterprise: string;
   job: string;
+  startDate: string;
+  endDate: string;
 }

@@ -1,16 +1,24 @@
 import { IWork } from '../interfaces/IWork';
 
-export const works: IWork[] = [
+const works: IWork[] = [
   {
-    company: 'INSTITUTO FEDERAL DA PARAÍBA',
-    startYear: '2019',
-    finishYear: '*',
-    job: 'Graduando Análise e Desenvolvimento de Sistemas',
+    enterprise: 'Accenture Brasil',
+    job: 'Analista de informações',
+    startDate: '10/03/2022',
+    endDate: '*',
   },
   {
-    company: 'ACCENTURE',
-    startYear: '2022',
-    finishYear: '2022',
-    job: 'Academia Accenture',
+    enterprise: 'Accenture Brasil',
+    job: 'Academia Oracle BRM',
+    startDate: '03/01/2022',
+    endDate: '28/01/2022',
+  },
+  {
+    enterprise: 'Instituto Federal da Paraíba',
+    job: 'Análise e Desenvolvimento de Sistemas',
+    startDate: '19/04/2019',
+    endDate: '*',
   },
 ];
+
+export default works;

@@ -1,20 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
+import * as ReactDOMClient from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import { SelectedLinkProvider } from './context/SelectedLink';
-import theme from './global/styles/themes';
 import reportWebVitals from './reportWebVitals';
+import ThemeProvider from './contexts/ThemeContext';
 
-ReactDOM.render(
+const container = document.getElementById('root') as HTMLElement;
+
+const root = ReactDOMClient.createRoot(container);
+
+root.render(
   <React.StrictMode>
-    <SelectedLinkProvider>
-      <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <ThemeProvider>
         <App />
       </ThemeProvider>
-    </SelectedLinkProvider>
+    </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root'),
 );
 
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

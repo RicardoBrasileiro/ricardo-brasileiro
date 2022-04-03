@@ -1,35 +1,15 @@
-/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+import { Routes as AppRoutes, Route } from 'react-router-dom';
+import routes from './static/routes';
 
-import React, { useState } from 'react';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  RouteComponentProps,
-} from 'react-router-dom';
-import NavBar from './components/App/NavBar';
-import routes from './routes';
-
-const Routes = (): JSX.Element => {
+function Routes(): JSX.Element {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        {routes.map((route) => {
-          return (
-            <Route
-              key={route.name}
-              path={route.path}
-              exact={route.exact}
-              render={(props: RouteComponentProps<any>) => (
-                <route.component {...props} {...route.props} />
-              )}
-            />
-          );
-        })}
-      </Switch>
-    </BrowserRouter>
+    <AppRoutes>
+      {routes.map((route) => (
+        <Route key={route.name} path={route.path} element={<route.element />} />
+      ))}
+    </AppRoutes>
   );
-};
+}
 
 export default Routes;

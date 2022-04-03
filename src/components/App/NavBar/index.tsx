@@ -1,99 +1,88 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useLocation, useRouteMatch } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
-  Logo,
-  MenuIcon,
-  MenuIconBar,
-  NavBarAction,
-  NavBarActions,
   NavBarBox,
-  ToggleMenuCheckBox,
+  NavBarActions,
+  NavBarAction,
+  NavBarActionIcon,
+  NavBarActionLabel,
+  ToggleNavBar,
+  ToggleNavBarLabel,
+  ToggleNavBarIcon,
 } from './styles';
-import theme from '../../../global/styles/themes';
-import { useSelectedLinkContext } from '../../../context/SelectedLink';
 
-interface ILink {
-  label: string;
+interface IURI {
+  name: string;
   path: string;
+  icon: string;
 }
 
-const links: ILink[] = [
+const uris: IURI[] = [
   {
-    label: 'Início',
+    name: 'Home',
+    icon: 'home',
     path: '/',
   },
   {
-    label: 'Projetos',
-    path: '/projects',
-  },
-  {
-    label: 'Habilidades',
+    name: 'Skills',
+    icon: 'grade',
     path: '/skills',
   },
   {
-    label: 'Trabalhos',
+    name: 'Projects',
+    icon: 'code',
+    path: '/projects',
+  },
+  {
+    name: 'Works',
+    icon: 'work',
     path: '/works',
   },
   {
-    label: 'Contato',
+    name: 'Contact',
+    icon: 'mail',
     path: '/contact',
   },
 ];
 
-const NavBar = (): JSX.Element => {
-  const { selectedLink, setSelectedLink } = useSelectedLinkContext();
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const [pageScroll, setPageScroll] = useState(0);
-
-  const route = useLocation();
-  const { pathname } = route;
-
-  const handleScroll = (): void => {
-    const scroll = document.documentElement.scrollTop;
-    setPageScroll(scroll);
-  };
-
-  useEffect(() => {
-    setSelectedLink(pathname);
-    window.onscroll = () => handleScroll();
-  }, [pathname]);
+function NavBar(): JSX.Element {
+  const appLocation = useLocation();
+  const { pathname } = appLocation;
+  const [isToggle, setIsToggle] = useState(false);
 
   return (
-    <NavBarBox
-      style={{
-        boxShadow: pageScroll > 0 ? '0px 0px 4px rgba(0, 0, 0, 0.2)' : '',
-      }}
-    >
-      <Logo to="/">RB</Logo>
-      <ToggleMenuCheckBox type="checkbox" checked={toggleMenu} />
-      <MenuIcon
-        className="menu-icon"
-        onClick={() => setToggleMenu(!toggleMenu)}
-      >
-        <MenuIconBar />
-        <MenuIconBar />
-        <MenuIconBar />
-      </MenuIcon>
-      <NavBarActions className="nav-bar-actions">
-        {links.map((link, index) => (
+    <NavBarBox>
+      <ToggleNavBarLabel htmlFor="toggle-navbar">
+        <ToggleNavBarIcon className="material-icons">menu</ToggleNavBarIcon>
+      </ToggleNavBarLabel>
+      <ToggleNavBar
+        id="toggle-navbar"
+        type="checkbox"
+        checked={isToggle}
+        onChange={() => setIsToggle(!isToggle)}
+      />
+      <NavBarActions>
+        <ToggleNavBarLabel htmlFor="toggle-navbar">
+          <ToggleNavBarIcon className="material-icons">close</ToggleNavBarIcon>
+        </ToggleNavBarLabel>
+        {uris.map((uri) => (
           <NavBarAction
-            onClick={() => setToggleMenu(false)}
-            className={selectedLink === index ? 'selected-link' : ''}
-            key={link.label}
-            style={{
-              color:
-                index === selectedLink ? theme.similarColors.primaryColor : '',
-              borderColor:
-                index === selectedLink ? theme.similarColors.primaryColor : '',
+            key={uri.name}
+            to={uri.path}
+            className={`${pathname === uri.path ? 'selected' : ''}`}
+            onClick={() => {
+              setIsToggle(false);
             }}
-            to={link.path}
           >
-            {link.label}
+            <NavBarActionIcon className="material-icons-outlined">
+              {uri.icon}
+            </NavBarActionIcon>
+            <NavBarActionLabel>{uri.name}</NavBarActionLabel>
           </NavBarAction>
         ))}
       </NavBarActions>
     </NavBarBox>
   );
-};
+}
 
 export default NavBar;

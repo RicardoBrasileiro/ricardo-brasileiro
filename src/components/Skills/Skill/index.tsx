@@ -1,29 +1,41 @@
-import React from 'react';
-import { ISkill } from '../../../pages/Skills';
+import React, { useState } from 'react';
+import { ISkill } from '../../../interfaces/ISkill';
 import {
-  Progress,
-  SkillBar,
   SkillBox,
+  SkillIcon,
+  SkillInfo,
   SkillName,
-  SkillProgress,
+  SkillPercentage,
 } from './styles';
 
 interface ISkillProps {
   skill: ISkill;
 }
 
-const Skill = (props: ISkillProps): JSX.Element => {
+function Skill(props: ISkillProps): JSX.Element {
   const { skill } = props;
-  const { name, progress } = skill;
+  const { name, icon, color, percentage } = skill;
+
+  const [isHover, setIsHover] = useState(false);
 
   return (
-    <SkillBox>
-      <SkillName>{name}</SkillName>
-      <SkillProgress>
-        <SkillBar style={{ width: `${progress}%` }} />
-      </SkillProgress>
+    <SkillBox
+      color={color}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+    >
+      <SkillIcon src={icon} />
+      <SkillInfo>
+        <SkillName color={color}>{name}</SkillName>
+        <SkillPercentage
+          color={color}
+          style={{
+            width: isHover ? `${percentage}%` : '0%',
+          }}
+        />
+      </SkillInfo>
     </SkillBox>
   );
-};
+}
 
 export default Skill;

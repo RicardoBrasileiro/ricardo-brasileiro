@@ -1,74 +1,23 @@
 import React from 'react';
-import SkillsType from '../../components/Skills/SkillsType';
-import { IRoute } from '../../routes';
-import { SkillsBox, SkillsTypeList } from './styles';
+import { SkillsBox, TopWave, BottomWave, SkillSections } from './styles';
 
-export interface ISkill {
-  name: string;
-  progress: number;
-}
+import topWave from './assets/topWave.svg';
+import bottomWave from './assets/bottomWave.svg';
+import skillSections from '../../static/skillSections';
+import SkillsSection from '../../components/Skills/SkillsSection';
 
-export interface ISkillsType {
-  name: string;
-  skills: ISkill[];
-}
-
-const skillsTypes: ISkillsType[] = [
-  {
-    name: 'Front-end',
-    skills: [
-      {
-        name: 'HTML',
-        progress: 75,
-      },
-      {
-        name: 'CSS',
-        progress: 60,
-      },
-      {
-        name: 'ReactJS',
-        progress: 50,
-      },
-      {
-        name: 'VueJS',
-        progress: 25,
-      },
-    ],
-  },
-  {
-    name: 'Back-end',
-    skills: [
-      {
-        name: 'NodeJS',
-        progress: 35,
-      },
-    ],
-  },
-  {
-    name: 'Bancos de dados',
-    skills: [
-      {
-        name: 'PostgreSQL',
-        progress: 50,
-      },
-      {
-        name: 'MongoDB',
-        progress: 15,
-      },
-    ],
-  },
-];
-
-const Skills = (): JSX.Element => {
+function Skills(): JSX.Element {
   return (
     <SkillsBox>
-      <SkillsTypeList>
-        {skillsTypes.map((skillsType) => (
-          <SkillsType skillsType={skillsType} />
+      <TopWave src={topWave} />
+      <BottomWave src={bottomWave} />
+      <SkillSections>
+        {skillSections.map((skillSection) => (
+          <SkillsSection key={skillSection.name} skillSection={skillSection} />
         ))}
-      </SkillsTypeList>
+      </SkillSections>
     </SkillsBox>
   );
-};
+}
 
 export default Skills;
