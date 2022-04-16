@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Routes from './Routes';
 import NavBar from './components/App/NavBar';

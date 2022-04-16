@@ -26,7 +26,7 @@ const projects: IProject[] = [
       },
     ],
     codeLink: '',
-    deployLink: 'https://virtual-contacts-app.netlify.app/',
+    deployLink: '',
   },
 ];
 
