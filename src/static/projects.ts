@@ -14,7 +14,7 @@ const projects: IProject[] = [
       },
     ],
     codeLink: '',
-    deployLink: '',
+    deployLink: 'https://oneduca.netlify.app',
   },
   {
     title: 'Virtual Contacts',
@@ -25,7 +25,7 @@ const projects: IProject[] = [
         path: virtualContacts,
       },
     ],
-    codeLink: '',
+    codeLink: 'https://github.com/ricardobgx/virtual-contacts',
     deployLink: '',
   },
 ];
