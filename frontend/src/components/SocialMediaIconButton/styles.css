@@ -1,0 +1,14 @@
+.social-media-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  width: 40px;
+
+  border-radius: 10px;
+}
+
+.social-media-icon img {
+  height: 20px;
+}
