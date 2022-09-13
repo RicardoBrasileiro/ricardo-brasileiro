@@ -440,11 +440,6 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@vitejs/plugin-vue@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-3.1.0.tgz#3a423ea6943a450e806da412a911150e928598ed"
-  integrity sha512-fmxtHPjSOEIRg6vHYDaem+97iwCUg/uSIaTzp98lhELt2ISOQuDo2hbkBdXod0g15IhfPMQmAxh4heUks2zvDA==
-
 "@volar/code-gen@0.40.13":
   version "0.40.13"
   resolved "https://registry.yarnpkg.com/@volar/code-gen/-/code-gen-0.40.13.tgz#cd69a67b11462b93d79ea2139f9f1e0a76e15111"

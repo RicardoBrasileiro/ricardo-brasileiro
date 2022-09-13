@@ -1,8 +1,8 @@
 <template>
-  <div class="page about">
+  <div class="page about" id="about">
     <div class="presentation">
       <div class="about-me">
-        <h1 class="section-title">Quem sou eu?</h1>
+        <SectionTitle title="Quem sou eu?" :iconPath="emojiThikingIcon" />
         <p class="description">
           Meu nome é Ricardo. Sou formado no curso de Análise e Desenvolvimento
           de Sistemas pelo Instituto Federal da Paraíba (IFPB) e sempre fui
@@ -12,10 +12,7 @@
           interfaces, me divirto bastante. No tempo livre gosto de ouvir música
           e jogar, além de praticar meus conhecimentos em programação.
         </p>
-        <button class="contact-me">
-          <p>Fale comigo</p>
-          <span class="material-icons-rounded">></span>
-        </button>
+        <ContactMeButton />
       </div>
       <div class="me">
         <img class="my-photo" src="../../assets/images/profile.jpg" alt="" />
@@ -52,4 +49,4 @@
 
 <script src="./script.ts"></script>
 
-<style src="./styles.css"></style>
+<style src="./styles.css" scoped></style>

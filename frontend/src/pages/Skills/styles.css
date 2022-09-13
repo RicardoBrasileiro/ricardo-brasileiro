@@ -1,0 +1,21 @@
+.skills {
+  padding: 60px 0;
+}
+
+.skills-container {
+  width: 960px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.skills-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  padding: 20px;
+
+  transform: translateX(calc(-25%));
+}

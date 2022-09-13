@@ -1,9 +1,11 @@
 <script lang="ts">
-import About from "./components/About/index.vue";
+import About from "./pages/About/index.vue";
+import Skills from "./pages/Skills/index.vue";
 
 export default {
   components: {
     About,
+    Skills,
   },
 };
 </script>
@@ -11,6 +13,7 @@ export default {
 <template>
   <div class="app">
     <About />
+    <Skills />
   </div>
 </template>
 
