@@ -1,8 +1,8 @@
 <template>
-  <div class="page about" id="about">
+  <div class="section about" id="about">
     <div class="presentation">
       <div class="about-me">
-        <SectionTitle title="Quem sou eu?" :iconPath="emojiThikingIcon" />
+        <SectionHeader title="Quem sou eu?" :iconPath="emojiThikingIcon" />
         <p class="description">
           Meu nome é Ricardo. Sou formado no curso de Análise e Desenvolvimento
           de Sistemas pelo Instituto Federal da Paraíba (IFPB) e sempre fui
@@ -12,7 +12,7 @@
           interfaces, me divirto bastante. No tempo livre gosto de ouvir música
           e jogar, além de praticar meus conhecimentos em programação.
         </p>
-        <ContactMeButton />
+        <ContactMe />
       </div>
       <div class="me">
         <img class="my-photo" src="../../assets/images/profile.jpg" alt="" />
@@ -23,26 +23,14 @@
       </div>
     </div>
     <div class="social-medias">
-      <SocialMediaIconButton
-        url="#"
-        backgroundColor="#0077B5"
-        :iconPath="linkedinIcon"
-      />
-      <SocialMediaIconButton
-        url="#"
-        backgroundColor="#000000"
-        :iconPath="githubIcon"
-      />
-      <SocialMediaIconButton
+      <SocialMedia url="#" backgroundColor="#0077B5" :iconPath="linkedinIcon" />
+      <SocialMedia url="#" backgroundColor="#000000" :iconPath="githubIcon" />
+      <SocialMedia
         url="#"
         backgroundColor="#FF3E4A"
         :iconPath="instagramIcon"
       />
-      <SocialMediaIconButton
-        url="#"
-        backgroundColor="#1D9BF0"
-        :iconPath="twitterIcon"
-      />
+      <SocialMedia url="#" backgroundColor="#1D9BF0" :iconPath="twitterIcon" />
     </div>
   </div>
 </template>
