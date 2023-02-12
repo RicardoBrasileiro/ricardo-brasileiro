@@ -1,0 +1,31 @@
+* {
+  color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(
+    90.62deg,
+    #ff0f7b 0%,
+    #ff0f7b 0.01%,
+    #f89b29 100%
+  );
+  min-height: 100vh;
+}
+
+.profile-picture-container {
+}
+
+.profile-picture {
+  width: 200px;
+  border-radius: 50%;
+}
