@@ -1,31 +1,184 @@
 * {
-  color: #ffffff;
   margin: 0px;
   padding: 0px;
-  outline: none;
   box-sizing: border-box;
-  text-decoration: none;
+
+  color: #ffffff;
+
   font-family: "Ubuntu", sans-serif;
+  text-decoration: none;
+
+  outline: none;
 }
 
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background: linear-gradient(
-    90.62deg,
-    #ff0f7b 0%,
-    #ff0f7b 0.01%,
-    #f89b29 100%
-  );
+  gap: 40px;
+
   min-height: 100vh;
+
+  background: linear-gradient(90.62deg,
+      #ff0f7b 0%,
+      #ff0f7b 0.01%,
+      #f89b29 100%);
+  background-size: 200%;
+  background-position: 50%;
+
+  animation: move-background 10s linear infinite;
 }
 
-.profile-picture-container {
+button {
+  background: none;
+
+  border: none;
 }
+
+.profile-picture-container {}
 
 .profile-picture {
-  width: 200px;
+  width: 240px;
+
+  border: 8px solid #ffffff;
   border-radius: 50%;
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.personal-info h1 {
+  font-size: 2.7rem;
+}
+
+.personal-info p {
+  font-size: 1.6rem;
+}
+
+.social-media-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-media-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+
+  width: 44px;
+  padding: 10px;
+
+  background: #ffffff;
+
+  border-radius: 25px;
+
+  cursor: pointer;
+
+  transition: 300ms all linear;
+}
+
+.social-media-link:hover {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.social-media-link.linkedin:hover {
+  width: 122px;
+}
+
+.social-media-link.github:hover {
+  width: 114px;
+}
+
+.social-media-link.mail:hover {
+  width: 99px;
+}
+
+.social-media-link svg {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.social-media-link svg path {
+  fill: #ffffff;
+
+  transition: 200ms fill linear;
+}
+
+.social-media-link p {
+  display: none;
+
+  opacity: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.social-media-link:hover p {
+  display: block;
+
+  animation: show-social-media-name 300ms linear forwards;
+  animation-delay: 300ms;
+}
+
+.social-media-link.linkedin {
+  background: #0077B5;
+}
+
+.social-media-link.github {
+  background: #000000;
+}
+
+.social-media-link.mail {
+  background: #E59600;
+}
+
+@keyframes move-background {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .profile-picture {
+    width: 220px;
+  }
+
+  .personal-info h1 {
+    font-size: 2.3rem;
+  }
+
+  .personal-info p {
+    font-size: 1.4rem;
+  }
+}
+
+@keyframes show-social-media-name {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
