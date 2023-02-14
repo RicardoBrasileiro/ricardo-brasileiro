@@ -36,13 +36,38 @@ button {
   border: none;
 }
 
-.profile-picture-container {}
+.profile-picture-container {
+  position: relative;
+}
 
 .profile-picture {
   width: 240px;
 
   border: 8px solid #ffffff;
   border-radius: 50%;
+}
+
+.current-enterprise-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  width: min-content;
+  height: min-content;
+  padding: 10px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+.current-enterprise-logo {
+  width: 20px;
+  height: 20px;
 }
 
 .personal-info {
