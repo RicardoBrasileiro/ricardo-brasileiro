@@ -1,5 +1,6 @@
-import { SkillSection } from "../../../../types/Skill";
+import type { ISkill } from '../../../molecules/Skills/Skill/types';
 
-export type SkillSectionProps = {
-  section: SkillSection;
+export type ISkillSection = {
+	title: string;
+	skills: ISkill[];
 };

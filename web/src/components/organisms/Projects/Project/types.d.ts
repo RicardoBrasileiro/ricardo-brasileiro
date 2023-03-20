@@ -1,5 +1,8 @@
-import { Project } from "../../../../static/projects/types";
+import type { ISkill } from '../../../molecules/Skills/Skill/types';
 
-export type ProjectProps = {
-  project: Project;
+export type IProject = {
+	name: string;
+	description: string;
+	picture: string;
+	skills: ISkill[];
 };
