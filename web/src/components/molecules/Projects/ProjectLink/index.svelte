@@ -13,24 +13,38 @@
 	const { name, icon, url } = link;
 </script>
 
-<a class="project-link" href={url}>
+<button class={`project-link ${name.toLowerCase()}`} on:click={() => window.open(url)}>
 	<ProjectLinkIcon {icon} />
 	<ProjectLinkName {name} />
-</a>
+</button>
 
 <style>
 	.project-link {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: 8px;
 
 		height: 2.5rem;
 		width: max-content;
 		padding: 0px 16px;
 
-		border: 0.5px solid #cccccc;
 		border-radius: 1.25rem;
 
 		background: rgba(255, 255, 255, 0.025);
+	}
+
+	.project-link.github {
+		background: #000000;
+	}
+
+	.project-link.deploy {
+		background: #0466c8;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.project-link {
+			width: 100%;
+		}
 	}
 </style>

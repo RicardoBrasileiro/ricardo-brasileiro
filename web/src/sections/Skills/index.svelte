@@ -1,11 +1,11 @@
 <script lang="ts">
-	import SkillsContent from '../../components/organs/Skills/SkillsContent/index.svelte';
+	import Content from '../../components/organs/Skills/Content/index.svelte';
 
 	import { skillSections } from '../../static/skills';
 </script>
 
 <div id="skills" class="section skills">
-	<SkillsContent {skillSections} />
+	<Content {skillSections} />
 </div>
 
 <style>

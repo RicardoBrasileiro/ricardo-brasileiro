@@ -1,29 +1,13 @@
-import type { IProject } from '../../components/organisms/Projects/Project/types';
-import { nestJS, postgreSQL, react } from '../skills';
+import type { IProject } from '../../components/tissues/Projects/Project/types';
+import { express, postgreSQL, react } from '../skills';
 
 export const projects: IProject[] = [
 	{
 		name: 'ON EDUCA',
-		description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae ipsam eligendi illo eum.
-		Excepturi eaque illo reiciendis soluta fugiat sit tempora minima suscipit blanditiis aliquam. Et
-		in consequatur ullam dignissimos.`,
+		description: `Plataforma de revisão de conteúdos escolares para estudantes do ensino Médio e Fundamental. A aplicação utiliza conceitos de jogos para engajar mais o aluno no aprendizado (gamificação).`,
 		picture: '/images/on-educa.png',
-		skills: [react, nestJS, postgreSQL]
-	},
-	{
-		name: 'Z3ro',
-		description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae ipsam eligendi illo eum.
-		Excepturi eaque illo reiciendis soluta fugiat sit tempora minima suscipit blanditiis aliquam. Et
-		in consequatur ullam dignissimos.`,
-		picture: '/images/on-educa.png',
-		skills: [react, nestJS, postgreSQL]
-	},
-	{
-		name: 'Z3ro',
-		description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae ipsam eligendi illo eum.
-		Excepturi eaque illo reiciendis soluta fugiat sit tempora minima suscipit blanditiis aliquam. Et
-		in consequatur ullam dignissimos.`,
-		picture: '/images/on-educa.png',
-		skills: [react, nestJS, postgreSQL]
+		skills: [react, express, postgreSQL],
+		codeUrl: 'https://github.com/ricardobgx/on-educa',
+		deployUrl: 'https://oneduca.netlify.app'
 	}
 ];

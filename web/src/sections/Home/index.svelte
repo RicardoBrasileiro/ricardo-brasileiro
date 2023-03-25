@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Presentation from '../../components/organs/Home/Presentation/index.svelte';
+	import Presentation from '../../components/tissues/Home/Presentation/index.svelte';
 	import SocialMedias from '../../components/molecules/Home/SocialMedias/index.svelte';
 </script>
 
@@ -22,7 +22,7 @@
 
 	@media only screen and (max-width: 1100px) {
 		.home {
-			gap: 80px;
+			gap: 5rem;
 		}
 	}
 </style>

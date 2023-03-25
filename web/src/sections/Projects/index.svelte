@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProjectsContent from '../../components/organisms/Projects/ProjectsContent/index.svelte';
+	import ProjectsContent from '../../components/organs/Projects/ProjectsContent/index.svelte';
 
 	import { projects } from '../../static/projects';
 </script>

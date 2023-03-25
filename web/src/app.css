@@ -103,8 +103,25 @@ textarea {
 	}
 }
 
+.gradient-text {
+	text-fill-color: transparent;
+
+	background: linear-gradient(95.32deg, #f0227f 0%, #ee9425 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
 @media only screen and (max-width: 480px) {
 	.section {
 		padding: 2.5rem;
+	}
+
+	.section:first-of-type {
+		padding-top: 5rem;
+	}
+
+	.section:last-of-type {
+		padding-bottom: 5rem;
 	}
 }

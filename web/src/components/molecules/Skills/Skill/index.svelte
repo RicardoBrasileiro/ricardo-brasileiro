@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SkillIcon from '../../../atoms/Skills/SkillIcon/index.svelte';
+
 	import type { ISkill } from './types';
 
 	export let skill: ISkill = {
@@ -11,7 +13,7 @@
 </script>
 
 <button class="skill" on:click={() => window.open(website)} title={name}>
-	<img src={icon} alt="" />
+	<SkillIcon {icon} />
 </button>
 
 <style>
@@ -32,9 +34,5 @@
 
 	.skill:hover {
 		transform: translateY(-7%);
-	}
-
-	.skill img {
-		height: 50px;
 	}
 </style>

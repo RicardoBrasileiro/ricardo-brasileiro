@@ -19,4 +19,10 @@
 		height: 2.5rem;
 		padding: 0rem 1rem;
 	}
+
+	@media only screen and (max-width: 1100px) {
+		.see-more-on-github {
+			margin-top: 1.25rem;
+		}
+	}
 </style>

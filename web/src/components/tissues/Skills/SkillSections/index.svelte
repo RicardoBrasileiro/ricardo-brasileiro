@@ -1,7 +1,7 @@
 <script lang="ts">
-	import SkillSection from '../../../organisms/Skills/SkillSection/index.svelte';
+	import SkillSection from '../../../cells/Skills/SkillSection/index.svelte';
 
-	import type { ISkillSection } from '../../../organisms/Skills/SkillSection/types';
+	import type { ISkillSection } from '../../../cells/Skills/SkillSection/types';
 
 	export let sections: ISkillSection[] = [];
 </script>
@@ -16,7 +16,7 @@
 	.skill-sections {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		gap: 80px 2.5rem;
+		gap: 5rem 2.5rem;
 
 		width: 100%;
 	}

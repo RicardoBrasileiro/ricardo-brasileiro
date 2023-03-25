@@ -1,5 +1,5 @@
 import type { ISkill } from '../../components/molecules/Skills/Skill/types';
-import type { ISkillSection } from '../../components/organisms/Skills/SkillSection/types';
+import type { ISkillSection } from '../../components/cells/Skills/SkillSection/types';
 
 export const react: ISkill = {
 	name: 'ReactJS',
