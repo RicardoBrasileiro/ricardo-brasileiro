@@ -6,7 +6,7 @@ import { links } from "../../static/data/links";
 
 export function Overview() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[100vh] p-10 md:p-20">
+    <section className="flex flex-col items-center justify-center min-h-[100vh] p-10 md:p-20 lg:p-0">
       <div className="flex flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4">
           <img

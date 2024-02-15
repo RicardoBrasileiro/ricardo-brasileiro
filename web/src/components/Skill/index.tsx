@@ -11,6 +11,7 @@ export function Skill({ skill: { name, icon, url } }: ISkillProps) {
   return (
     <a
       href={url}
+      title={name}
       onClick={openUrl}
       className="flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 duration-300 size-[100px] rounded-3xl"
     >
